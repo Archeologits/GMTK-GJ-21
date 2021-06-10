@@ -5,7 +5,7 @@
 [ext_resource path="res://gui/assets/gui.png" type="Texture" id=3]
 [ext_resource path="res://gui/assets/sliderbg.png" type="Texture" id=4]
 
-[sub_resource type="StyleBoxTexture" id=2]
+[sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 3 )
 region_rect = Rect2( 16, 16, 80, 80 )
 margin_left = 21.0
@@ -13,7 +13,7 @@ margin_right = 21.0
 margin_top = 21.0
 margin_bottom = 21.0
 
-[sub_resource type="StyleBoxTexture" id=1]
+[sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 3 )
 region_rect = Rect2( 104, 16, 80, 80 )
 margin_left = 59.0
@@ -59,8 +59,8 @@ Button/constants/hseparation = 2
 Button/fonts/font = ExtResource( 2 )
 Button/styles/disabled = null
 Button/styles/focus = null
-Button/styles/hover = SubResource( 2 )
-Button/styles/normal = SubResource( 1 )
+Button/styles/hover = SubResource( 1 )
+Button/styles/normal = SubResource( 2 )
 Button/styles/pressed = SubResource( 3 )
 HSlider/icons/grabber = ExtResource( 1 )
 HSlider/icons/grabber_disabled = null

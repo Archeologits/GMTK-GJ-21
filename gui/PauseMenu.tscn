@@ -1,0 +1,292 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://gui/tres/guitheme.tres" type="Theme" id=1]
+[ext_resource path="res://gui/PauseMenu.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "fade"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.862745 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "stop"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 1, 1, 1, 0.862745 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.384314, 0.384314, 0.384314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenu" type="MarginContainer" parent="."]
+margin_right = 1208.0
+margin_bottom = 675.0
+theme = ExtResource( 1 )
+custom_constants/margin_right = 20
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenu"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1188.0
+margin_bottom = 665.0
+mouse_filter = 0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/HBoxContainer"]
+margin_left = 155.0
+margin_right = 415.0
+margin_bottom = 655.0
+custom_constants/separation = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/HBoxContainer/VBoxContainer"]
+margin_right = 260.0
+margin_bottom = 619.0
+size_flags_vertical = 3
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Continue" type="Button" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 62.0
+margin_right = 260.0
+margin_bottom = 153.0
+text = "Continue"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewGame" type="Button" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 163.0
+margin_right = 260.0
+margin_bottom = 254.0
+text = "New Game"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadGame" type="Button" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 264.0
+margin_right = 260.0
+margin_bottom = 355.0
+text = "Load Game"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SaveGame" type="Button" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 365.0
+margin_right = 260.0
+margin_bottom = 456.0
+text = "Save Game"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="Button" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 466.0
+margin_right = 260.0
+margin_bottom = 557.0
+text = "Options"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Version" type="Label" parent="MainMenu/HBoxContainer/VBoxContainer"]
+margin_top = 624.0
+margin_right = 260.0
+margin_bottom = 655.0
+text = "v 0.0.1
+Archeologits"
+
+[node name="CenterContainer" type="CenterContainer" parent="MainMenu/HBoxContainer"]
+margin_left = 419.0
+margin_right = 1023.0
+margin_bottom = 655.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/HBoxContainer/CenterContainer"]
+margin_top = 80.0
+margin_right = 604.0
+margin_bottom = 575.0
+
+[node name="ItemList" type="ItemList" parent="MainMenu/HBoxContainer/CenterContainer/VBoxContainer"]
+margin_right = 604.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 500, 400 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenu/HBoxContainer/CenterContainer/VBoxContainer"]
+margin_top = 404.0
+margin_right = 604.0
+margin_bottom = 495.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewGame" type="Button" parent="MainMenu/HBoxContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+margin_right = 300.0
+margin_bottom = 91.0
+rect_min_size = Vector2( 300, 0 )
+text = "Load Save"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewGame2" type="Button" parent="MainMenu/HBoxContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 304.0
+margin_right = 604.0
+margin_bottom = 91.0
+rect_min_size = Vector2( 300, 0 )
+text = "Delete Save"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../CanvasModulate")
+anims/fade = SubResource( 1 )
+anims/stop = SubResource( 2 )
+
+[node name="OptionsMenu" type="MarginContainer" parent="."]
+visible = false
+margin_right = 1600.0
+margin_bottom = 900.0
+custom_constants/margin_right = 120
+custom_constants/margin_top = 40
+custom_constants/margin_left = 120
+custom_constants/margin_bottom = 40
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OptionsMenu"]
+margin_left = 120.0
+margin_top = 40.0
+margin_right = 1480.0
+margin_bottom = 860.0
+mouse_filter = 0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsMenu/HBoxContainer"]
+margin_right = 537.0
+margin_bottom = 820.0
+custom_constants/separation = 5
+
+[node name="Logo" type="TextureRect" parent="OptionsMenu/HBoxContainer/VBoxContainer"]
+margin_right = 537.0
+margin_bottom = 129.0
+stretch_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsMenu/HBoxContainer/VBoxContainer"]
+margin_top = 134.0
+margin_right = 537.0
+margin_bottom = 656.0
+size_flags_vertical = 3
+custom_constants/separation = 20
+alignment = 1
+
+[node name="FullScreen" type="CheckButton" parent="OptionsMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 44.0
+margin_right = 537.0
+margin_bottom = 130.0
+text = "Full Screen"
+
+[node name="NewGame" type="HSlider" parent="OptionsMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 150.0
+margin_right = 537.0
+margin_bottom = 166.0
+
+[node name="LoadGame" type="Button" parent="OptionsMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 186.0
+margin_right = 537.0
+margin_bottom = 270.0
+text = "Load Game"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SaveGame" type="Button" parent="OptionsMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 290.0
+margin_right = 537.0
+margin_bottom = 374.0
+text = "Save Game"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="Button" parent="OptionsMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 394.0
+margin_right = 537.0
+margin_bottom = 478.0
+text = "Options"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Version" type="Label" parent="OptionsMenu/HBoxContainer/VBoxContainer"]
+margin_top = 661.0
+margin_right = 537.0
+margin_bottom = 820.0
+text = "v 0.0.1
+Archeologits"
+
+[node name="CenterContainer" type="CenterContainer" parent="OptionsMenu/HBoxContainer"]
+margin_left = 541.0
+margin_right = 1360.0
+margin_bottom = 820.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Characters" type="TextureRect" parent="OptionsMenu/HBoxContainer/CenterContainer"]
+margin_left = 409.0
+margin_top = 410.0
+margin_right = 409.0
+margin_bottom = 410.0
+stretch_mode = 3
+
+[connection signal="pressed" from="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/Continue" to="." method="_continue"]
+[connection signal="pressed" from="OptionsMenu/HBoxContainer/VBoxContainer/VBoxContainer/FullScreen" to="." method="_continue"]
