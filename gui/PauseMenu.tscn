@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://gui/tres/guitheme.tres" type="Theme" id=1]
+[ext_resource path="res://gui/Options.tscn" type="PackedScene" id=2]
 [ext_resource path="res://gui/PauseMenu.gd" type="Script" id=3]
 
 [sub_resource type="Animation" id=1]
@@ -70,8 +71,8 @@ mouse_filter = 0
 alignment = 1
 
 [node name="Buttons" type="VBoxContainer" parent="MainMenu/HBox"]
-margin_left = 123.0
-margin_right = 383.0
+margin_left = 377.0
+margin_right = 637.0
 margin_bottom = 590.0
 size_flags_vertical = 3
 custom_constants/separation = 10
@@ -135,6 +136,7 @@ text = "v 0.0.1
 Archeologits"
 
 [node name="Savefiles" type="CenterContainer" parent="MainMenu/HBox"]
+visible = false
 margin_left = 387.0
 margin_right = 891.0
 margin_bottom = 590.0
@@ -177,6 +179,9 @@ align = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Options" parent="MainMenu/HBox" instance=ExtResource( 2 )]
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../CanvasModulate")

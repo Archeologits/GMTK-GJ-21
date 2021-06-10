@@ -9,7 +9,9 @@ onready var animation_player : AnimationPlayer = $AnimationPlayer
 # buttons contains the main buttons: Continue, NewGame, LoadGame, SaveGame, Options
 onready var buttons : VBoxContainer = $MainMenu/HBox/Buttons
 # list contains a list of save files and three buttons: ActionButton, Delete, Back
-onready var list : CenterContainer = $MainMenu/HBox/Savefiles
+onready var savefiles : CenterContainer = $MainMenu/HBox/Savefiles
+# options contains a grid of settings: Volume
+onready var options : CenterContainer = $MainMenu/HBox/Options
 # action_button will either load or save file depending on the mode (see below)
 onready var action_button : Button = $MainMenu/HBox/Savefiles/VBox/Buttons/ActionButton
 # savefile_list contains a list of save files
@@ -22,10 +24,10 @@ var mode : String = "Save Game"
 
 var data = {"a": 2}
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
   pause_mode = PAUSE_MODE_PROCESS
   animation_player.play("stop")
+  options.back_button.connect("pressed", self, "_show_buttons")
 
 func _input(event : InputEvent) -> void:
   if event.is_action_pressed("ui_cancel"):
@@ -42,10 +44,13 @@ func _continue() -> void:
   animation_player.play_backwards("fade")  
 
 func _new_game() -> void:
+  # possibly go to main screen
   pass
 
 func _options() -> void:
-  pass
+  buttons.visible = false
+  savefiles.visible = false
+  options.visible = true
 
 func _show_load_list() -> void:
   # Show list with save files and rename action button to "Load Game"
@@ -70,8 +75,9 @@ func _execute_action() -> void:
 
 func _show_list(new_mode : String) -> void:
   # Show list with save files
-  list.visible = true
   buttons.visible = false
+  options.visible = false
+  savefiles.visible = true
   mode = new_mode
   action_button.text = mode
   _show_files()
@@ -91,7 +97,8 @@ func _show_files() -> void:
       file = dir.get_next()
 
 func _show_buttons() -> void:
-  list.visible = false
+  savefiles.visible = false
+  options.visible = false
   buttons.visible = true
 
 func _load_game(file_name : String) -> void:
