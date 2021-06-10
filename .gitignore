@@ -1,0 +1,6 @@
+.import/
+.import/*
+export/
+export/*
+*.cfg
+
