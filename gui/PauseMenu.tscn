@@ -40,7 +40,7 @@ tracks/0/keys = {
 script = ExtResource( 3 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 1, 1, 1, 0.862745 )
+color = Color( 1, 1, 1, 0 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1024.0

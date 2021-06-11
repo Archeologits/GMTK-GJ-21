@@ -1,6 +1,5 @@
 extends Node
 class_name Level
-
 # Add stuff common among all levels
 
 func _ready():
