@@ -3,10 +3,6 @@ extends Node
 # Member variables
 var data : Dictionary = {}
 
-# var a = 2
-# var b = "text"
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
   data["Player1"] = {}
   data["Player2"] = {}
