@@ -1,8 +1,8 @@
 extends Node
 class_name State
 
-var fsm: StateMachine
-var object: Object
+var fsm : StateMachine
+var object : Object
 var animations
 var sound
 

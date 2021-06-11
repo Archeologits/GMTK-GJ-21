@@ -8,16 +8,17 @@ export (int, 0, 100) var max_health : int = 100
 export (bool) var current : bool = true
 
 var has_tool : bool = false
-#onready var healthbar : HealthBar = $"../HUD/Health" 
 
 var facing : Vector2 = Vector2.RIGHT
 var direction : Vector2 = Vector2.ZERO
 var velocity : Vector2 = Vector2.ZERO
 
 func collect_tool(tool_name : String) -> void:
+  # If player enters tool area, tool will call this function
   pass
 
 func pass_item() -> void:
+  # Possibly to pass items from one player to another if there is a gap between two rooms
   pass
 
 func _process(delta : float) -> void:
