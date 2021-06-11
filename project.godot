@@ -8,9 +8,26 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "CenterContainer",
+"class": "Options",
+"language": "GDScript",
+"path": "res://gui/Options.gd"
+}, {
+"base": "CanvasLayer",
+"class": "PauseMenu",
+"language": "GDScript",
+"path": "res://gui/PauseMenu.gd"
+} ]
+_global_script_class_icons={
+"Options": "",
+"PauseMenu": ""
+}
+
 [application]
 
 config/name="GMTK-GJ-21"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
 [physics]
