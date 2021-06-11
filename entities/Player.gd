@@ -14,6 +14,12 @@ var facing : Vector2 = Vector2.RIGHT
 var direction : Vector2 = Vector2.ZERO
 var velocity : Vector2 = Vector2.ZERO
 
+func collect_tool(tool_name : String) -> void:
+  pass
+
+func pass_item():
+  pass
+
 func _process(delta):
   _handle_input()
 
