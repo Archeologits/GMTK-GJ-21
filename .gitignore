@@ -1,5 +1,6 @@
 .import/
 .import/*
+.mono/*
 export/
 export/*
 *.cfg
