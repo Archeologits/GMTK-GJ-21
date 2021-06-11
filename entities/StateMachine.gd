@@ -11,7 +11,7 @@ func _ready() -> void:
   state = get_child(0)
   parent = get_parent()
   _enter_state()
-    
+
 func get_state() -> String:
   return state.name
 
