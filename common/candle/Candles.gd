@@ -14,6 +14,10 @@ func interact(body : Player) -> void:
 func _switch_state() -> void:
   state = "on" if state == "off" else "on"
   $Sprite.play(state)
+  if state == "on":
+    $Light.enabled = true
+  else:
+    $Light.enabled = false
 
 func _on_player_entered(body : Node2D) -> void:
   if body.is_in_group("Players"):
