@@ -10,7 +10,7 @@ func interact(body : Player) -> void:
     Util.swap_message(collected)
     body.collect_tool(tool_name)
     item_collected = true
-  elif body.tools.has("Butter knife"):
+  elif body.tools.has("Butter knife") or body.tools.has("Red key"):
     Util.swap_message(opened)
     body.collect_tool(tool_name)
     chute_opened = true

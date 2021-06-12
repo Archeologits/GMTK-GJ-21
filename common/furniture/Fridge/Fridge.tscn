@@ -9,13 +9,11 @@ extents = Vector2( 16.2497, 32.2169 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 39.142, 45.2982 )
 
-[node name="Fridge" type="StaticBody2D" groups=[
-"Interactible",
-]]
+[node name="Fridge" type="StaticBody2D"]
 scale = Vector2( 3, 3 )
 script = ExtResource( 1 )
 furniture_name = "Fridge"
-tool_name = "brozen Bread with butter knife"
+tool_name = "Frozen bread with butter knife"
 collected = "Found a frozen bread with butter knife!!"
 
 [node name="Sprite" type="Sprite" parent="."]
