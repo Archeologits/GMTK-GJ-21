@@ -60,12 +60,12 @@ func _process(_delta):
   var rect = rooms_rects[room - 1]
   var screen_size = get_viewport().size
   var canvas_trans = get_viewport().get_canvas_transform()
-  var shrink_ratio = \
+  var expand_ratio = \
     min(screen_size.x / rect.size.x, \
         screen_size.y / rect.size.y)
-  canvas_trans.x.x = shrink_ratio
-  canvas_trans.y.y = shrink_ratio
-  canvas_trans.origin = -rect.position * shrink_ratio
+  canvas_trans.x.x = expand_ratio
+  canvas_trans.y.y = expand_ratio
+  canvas_trans.origin = -rect.position * expand_ratio
   
   if shake_mode:
     if clock - shake_start <= SHAKE_TIME:
