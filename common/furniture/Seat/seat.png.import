@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BlackWhiteTiles.png-b44bf80337c076de781d108dd6f9294b.stex"
+path="res://.import/seat.png-347b9a5cc68a9f808687583435a303ba.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/BlackWhiteTiles.png"
-dest_files=[ "res://.import/BlackWhiteTiles.png-b44bf80337c076de781d108dd6f9294b.stex" ]
+source_file="res://common/furniture/Seat/seat.png"
+dest_files=[ "res://.import/seat.png-347b9a5cc68a9f808687583435a303ba.stex" ]
 
 [params]
 

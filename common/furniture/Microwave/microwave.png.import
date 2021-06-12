@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BlackWhiteTiles.png-b44bf80337c076de781d108dd6f9294b.stex"
+path="res://.import/microwave.png-6663a213650927dfc246cca6066ccf6f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/BlackWhiteTiles.png"
-dest_files=[ "res://.import/BlackWhiteTiles.png-b44bf80337c076de781d108dd6f9294b.stex" ]
+source_file="res://common/furniture/Microwave/microwave.png"
+dest_files=[ "res://.import/microwave.png-6663a213650927dfc246cca6066ccf6f.stex" ]
 
 [params]
 

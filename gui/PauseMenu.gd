@@ -5,6 +5,8 @@ class_name PauseMenu
 const SAVE_PATH : String = "user://saves/"
 const MAX_SAVE_COUNT : int = 5
 
+export (String) var start_animation : String = "stop"
+
 onready var animation_player : AnimationPlayer = $AnimationPlayer
 # buttons contains the main buttons: Continue, NewGame, LoadGame, SaveGame, Options
 onready var buttons : VBoxContainer = $MainMenu/HBox/Buttons
@@ -26,7 +28,7 @@ var data = {"a": 2}
 
 func _ready():
   pause_mode = PAUSE_MODE_PROCESS
-  animation_player.play("stop")
+  animation_player.play(start_animation)
   options.back_button.connect("pressed", self, "_show_buttons")
 
 func _input(event : InputEvent) -> void:
@@ -43,9 +45,10 @@ func _continue() -> void:
   get_tree().paused = false
   animation_player.play_backwards("fade")  
 
-func _new_game() -> void:
-  # possibly go to main screen
-  pass
+func _new_game(delay : float = 0.5) -> void:
+  yield(get_tree().create_timer(delay), "timeout")
+  assert(get_tree().change_scene("res://Main.tscn") == OK)
+  get_tree().paused = false
 
 func _options() -> void:
   buttons.visible = false

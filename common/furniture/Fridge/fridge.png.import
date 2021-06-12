@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BlackWhiteTiles.png-b44bf80337c076de781d108dd6f9294b.stex"
+path="res://.import/fridge.png-112bf2a3b2e9aefb6911c3699d965ba6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/BlackWhiteTiles.png"
-dest_files=[ "res://.import/BlackWhiteTiles.png-b44bf80337c076de781d108dd6f9294b.stex" ]
+source_file="res://common/furniture/Fridge/fridge.png"
+dest_files=[ "res://.import/fridge.png-112bf2a3b2e9aefb6911c3699d965ba6.stex" ]
 
 [params]
 
