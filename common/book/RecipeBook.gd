@@ -3,12 +3,12 @@ class_name RecipeBook
 
 # Member variables
 export (String) var message : String = "Press 'E' to interact"
-
+onready var destination : Position2D = get_node("../RecipeBookDestination")
 var last_player : Player
 
 func interact(body : Player) -> void:
-  pass
   # Push book down hole (move book to Blue Room Pantry)
+  position = destination.position
   
 func _on_player_entered(body : Node2D) -> void:
   if body.is_in_group("Players"):
