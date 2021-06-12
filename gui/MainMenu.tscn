@@ -185,7 +185,6 @@ anims/start = SubResource( 2 )
 anims/stop = SubResource( 3 )
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
-visible = true
 margin_left = 180.0
 margin_top = 247.0
 margin_right = 826.0

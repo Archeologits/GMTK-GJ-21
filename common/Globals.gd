@@ -4,10 +4,10 @@ extends Node
 var data : Dictionary = {}
 
 func _ready():
-  data["Player1"] = {}
-  data["Player2"] = {}
-  data["Player3"] = {}  
-  data["Player4"] = {}
+  for player in range(1, 4):
+    data[player] = {}
+    data[player]["room"] = -1
+
   data["Room1"] = {}
   data["Room2"] = {}
   data["Room3"] = {}  

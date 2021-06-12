@@ -5,10 +5,9 @@ class_name BlackScreen
 onready var animation_player : AnimationPlayer = $BlackScreen/AnimationPlayer
 
 func fade() -> void:
+  $BlackScreen.rect_size = get_viewport().size
   animation_player.play("fade")
 
-func _process(_delta):
-  $BlackScreen.rect_size = get_viewport().size
-  
 func unfade() -> void:
+  $BlackScreen.rect_size = get_viewport().size  
   animation_player.play_backwards("fade")

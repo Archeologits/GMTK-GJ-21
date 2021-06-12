@@ -19,6 +19,7 @@ var room : int = -1
 func _ready():
   black_screen.unfade()
   Util.current_scene = self
+  Util.set_message_stacks(PLAYERS)
   for i in range(1, PLAYERS + 1):
     players.append(get_node("Player" + str(i)))
 
@@ -39,6 +40,8 @@ func set_player(i):
     players[j].current = false
   players[i - 1].current = true
   active_player = i
+  Util.player = i
+  Util._update_message()
 
 func set_active_player():
   for i in range(0, PLAYERS):
@@ -53,10 +56,10 @@ var last_shake_end = 0
 
 func _process(_delta):
   clock += _delta
-  var new_room = get_room(get_node("Player" + str(active_player)).position)
-  if new_room != room:
-    room = new_room
-    Util.show_message("Currently in Room #" + str(room))
+  room = get_room(get_node("Player" + str(active_player)).position)
+  if Globals.data[active_player]["room"] != room:
+    Globals.data[active_player]["room"] = room
+    Util.push_message("Currently in Room #" + str(room))
   var rect = rooms_rects[room - 1]
   var screen_size = get_viewport().size
   var canvas_trans = get_viewport().get_canvas_transform()
@@ -91,7 +94,7 @@ func _input(event : InputEvent) -> void:
     Util.shake()
     return
   for i in range(1, PLAYERS + 1):
-    if event.is_action_pressed("player" + str(i)):
+    if event.is_action_pressed("player" + str(i)) and active_player != i:
       black_screen.fade()
       yield(black_screen.animation_player, "animation_finished")
       set_player(i)

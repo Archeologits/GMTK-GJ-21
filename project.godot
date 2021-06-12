@@ -79,6 +79,7 @@ Util="*res://Util.gd"
 
 [display]
 
+window/size/resizable=false
 window/stretch/aspect="keep"
 
 [input]

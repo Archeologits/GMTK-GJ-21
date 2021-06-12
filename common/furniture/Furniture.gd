@@ -8,7 +8,6 @@ export (String) var message : String = "Press 'E' to interact"
 onready var interact : Area2D = $Interact
 
 var broken : bool = false
-var old_message : String
 var last_player : Player
 
 func _ready() -> void:
@@ -23,10 +22,9 @@ func _on_player_entered(body : Node2D) -> void:
   if body.is_in_group("Players"):
     body.interactible = self
     last_player = body
-    old_message = Util.get_message()
-    Util.show_message(message)
+    Util.push_message(message)
 
 func _on_player_exited(body : Node2D) -> void:
   if body == last_player:
     body.interactible = null
-    Util.show_message(old_message)
+    Util.pop_message()
