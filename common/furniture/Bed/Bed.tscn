@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://common/furniture/Furniture.gd" type="Script" id=1]
 [ext_resource path="res://common/furniture/Bed/bed.png" type="Texture" id=2]
@@ -8,6 +8,9 @@ extents = Vector2( 32.0067, 14.6762 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 46.8227, 27.9941 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
+polygon = PoolVector2Array( 32, -16, -32, -16, -32, 16, 32, 16 )
 
 [node name="Bed" type="StaticBody2D" groups=[
 "Interactible",
@@ -30,3 +33,6 @@ shape = SubResource( 1 )
 shape = SubResource( 2 )
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="."]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 3 )
