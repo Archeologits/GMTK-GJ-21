@@ -11,6 +11,7 @@ var rooms_rects = []
 var active_player = -1
 
 func _ready():
+  black_screen.unfade()
   Util.current_scene = self
   for i in range(1, PLAYERS + 1):
     players.append(get_node("Player" + str(i)))
