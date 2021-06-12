@@ -7,6 +7,10 @@ onready var popup : PopupDialog = $Popup/Popup
 onready var black_screen : BlackScreen = $BlackScreen
 export var ROOMS = 6
 export var PLAYERS = 3
+export var NUMBER_OF_SHAKES = 3
+export var SHAKE_INTENSITY = 10
+export var SHAKE_BREAK = 1
+export var SHAKE_TIME = 0.5
 var rooms_rects = []
 var active_player = -1
 
@@ -40,7 +44,13 @@ func set_active_player():
       active_player = i + 1
       return
 
+var shake_mode = false
+onready var clock = 0
+var shake_start = 0
+var last_shake_end = 0
+
 func _process(_delta):
+  clock += _delta
   var room = get_room(get_node("Player" + str(active_player)).position)
   Util.show_message("Currently in Room #" + str(room))
   var rect = rooms_rects[room - 1]
@@ -52,13 +62,30 @@ func _process(_delta):
   canvas_trans.x.x = shrink_ratio
   canvas_trans.y.y = shrink_ratio
   canvas_trans.origin = -rect.position * shrink_ratio
-  get_viewport().set_canvas_transform(canvas_trans)
   
+  if shake_mode:
+    if clock - shake_start <= SHAKE_TIME:
+      var angle = (clock - shake_start) / SHAKE_TIME * NUMBER_OF_SHAKES * 2 * PI
+      canvas_trans.origin += SHAKE_INTENSITY * sin(angle) * Vector2.RIGHT
+    else:
+      shake_mode = false
+  get_viewport().set_canvas_transform(canvas_trans)
 
+
+func screen_shake():
+  if clock - shake_start > SHAKE_BREAK + SHAKE_TIME:
+    shake_mode = true
+    shake_start = clock
+    return true
+  else:
+    return false
   
 func _input(event : InputEvent) -> void:
   # Please don't judge this code too harshly (or refactor if deemed necessary)
   # Refactoring done -- sugar, functionality should still be the same
+  if event.is_action_pressed("ui_accept"):
+    Util.shake()
+    return
   for i in range(1, PLAYERS + 1):
     if event.is_action_pressed("player" + str(i)):
       black_screen.fade()
