@@ -85,10 +85,9 @@ shape = SubResource( 2 )
 [node name="Audio" type="AudioStreamPlayer2D" parent="."]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-visible = false
 frames = SubResource( 12 )
 animation = "break"
-frame = 2
+frame = 4
 playing = true
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
