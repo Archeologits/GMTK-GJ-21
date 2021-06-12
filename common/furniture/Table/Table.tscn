@@ -7,11 +7,12 @@
 extents = Vector2( 23.2815, 11.8098 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 41.735, 26.2949 )
+extents = Vector2( 18.1897, 6.91122 )
 
 [node name="Table" type="StaticBody2D" groups=[
 "Interactibles",
 ]]
+scale = Vector2( 3, 3 )
 script = ExtResource( 1 )
 furniture_name = "Table"
 

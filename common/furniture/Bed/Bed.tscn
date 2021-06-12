@@ -7,14 +7,16 @@
 extents = Vector2( 32.0067, 14.6762 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 56.0881, 37.2711 )
+extents = Vector2( 46.8227, 27.9941 )
 
 [node name="Bed" type="StaticBody2D" groups=[
 "Interactible",
 ]]
-scale = Vector2( 2, 2 )
+scale = Vector2( -3, 3 )
 script = ExtResource( 1 )
 furniture_name = "Bed"
+tool_name = "Lighter"
+collected = "Found a lighter!!"
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )

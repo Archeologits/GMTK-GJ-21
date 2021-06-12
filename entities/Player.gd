@@ -9,7 +9,6 @@ export (bool) var current : bool = true
 
 var interactible = null
 var tools : Array
-#var has_tool : bool = false
 
 var facing : Vector2 = Vector2.RIGHT
 var direction : Vector2 = Vector2.ZERO
@@ -19,8 +18,7 @@ signal interact(Player)
 
 func collect_tool(tool_name : String) -> void:
   # If player enters tool area, tool will call this function
-  print(tool_name)
-  pass
+  tools.push_back(tool_name)
 
 func pass_item() -> void:
   # Possibly to pass items from one player to another if there is a gap between two rooms
@@ -32,7 +30,7 @@ func _process(delta : float) -> void:
 func _physics_process(delta : float) -> void:
   _apply_movement(delta)
 
-func _input(event : InputEvent) -> void:
+func _input(event) -> void:
   if current:
     if event.is_action_pressed("pass_item"):
       pass_item()

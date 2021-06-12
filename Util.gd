@@ -1,15 +1,5 @@
 extends Node
 
-#var current_scene = null
-#
-#func show_message(text):
-#  current_scene.get_node("Popup/Popup/Label").text = text
-#
-#func get_message() -> String:
-#  return current_scene.get_node("Popup/Popup/Label").text
-
-#extends Node
-
 var current_scene = null
 var player : int
 var messages : Dictionary
@@ -21,6 +11,11 @@ func set_message_stacks(player_count : int) -> void:
 func push_message(text : String) -> void:
   messages[player].push_back(text)
   _update_message()
+
+func swap_message(text : String) -> void:
+  if !messages[player].empty():
+    messages[player][-1] = text
+    _update_message()
 
 func pop_message() -> void:
   messages[player].pop_back()

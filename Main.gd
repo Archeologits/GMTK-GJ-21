@@ -78,7 +78,6 @@ func _process(_delta):
       shake_mode = false
   get_viewport().set_canvas_transform(canvas_trans)
 
-
 func screen_shake():
   if clock - shake_start > SHAKE_BREAK + SHAKE_TIME:
     shake_mode = true

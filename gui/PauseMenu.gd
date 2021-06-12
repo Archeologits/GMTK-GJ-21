@@ -24,8 +24,6 @@ onready var confirm_dialog : ConfirmationDialog = $ConfirmationDialog
 # mode determines the action executed by the action_button
 var mode : String = "Save Game"
 
-var data = {"a": 2}
-
 func _ready():
   pause_mode = PAUSE_MODE_PROCESS
   animation_player.play(start_animation)
@@ -110,9 +108,8 @@ func _load_game(file_name : String) -> void:
   # Warn users that unsaved progress will be lost
   var file = File.new()
   if file.open_encrypted_with_pass(filepath, File.READ, "pass") == OK:
-    data = file.get_var()
+    Globals.data = file.get_var()
     file.close()
-    print(data.a)
 
 func _save_game(file_name : String) -> void:
   var filepath = SAVE_PATH + file_name + ".dat"
@@ -125,5 +122,5 @@ func _save_game(file_name : String) -> void:
     pass
   var file = File.new()
   if file.open_encrypted_with_pass(filepath, File.WRITE, "pass") == OK:
-    file.store_var(data)
+    file.store_var(Globals.data)
     file.close()
