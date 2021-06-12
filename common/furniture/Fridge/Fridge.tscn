@@ -12,9 +12,11 @@ extents = Vector2( 39.142, 45.2982 )
 [node name="Fridge" type="StaticBody2D" groups=[
 "Interactible",
 ]]
+scale = Vector2( 3, 3 )
 script = ExtResource( 1 )
 furniture_name = "Fridge"
-tool_name = "Frozen Bread With Butter Knife"
+tool_name = "brozen Bread with butter knife"
+collected = "Found a frozen bread with butter knife!!"
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )

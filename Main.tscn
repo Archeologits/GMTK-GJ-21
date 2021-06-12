@@ -80,12 +80,6 @@ position = Vector2( 920.567, 88.3731 )
 [node name="Table" parent="Furniture/BlueRoom" instance=ExtResource( 11 )]
 position = Vector2( 341.422, 1144.93 )
 
-[node name="Microwave" parent="Furniture/BlueRoom" instance=ExtResource( 12 )]
-position = Vector2( 589.616, 925.729 )
-
-[node name="Fridge" parent="Furniture/BlueRoom" instance=ExtResource( 10 )]
-position = Vector2( 534.597, 276.123 )
-
 [node name="RedRoom" type="Node" parent="Furniture"]
 
 [node name="Bed" parent="Furniture/RedRoom" instance=ExtResource( 13 )]
@@ -145,6 +139,14 @@ position = Vector2( 266.985, 987.42 )
 
 [node name="GreenRoom" type="Node" parent="Furniture"]
 
+[node name="Fridge" parent="Furniture/GreenRoom" instance=ExtResource( 10 )]
+position = Vector2( 2611.96, 989.708 )
+tool_name = "Frozen bread with butter knife"
+
+[node name="Microwave" parent="Furniture/GreenRoom" instance=ExtResource( 12 )]
+position = Vector2( 2965.1, 858.093 )
+collected = "Got a burnt bread and butter knife !!"
+
 [node name="BlackScreen" parent="." instance=ExtResource( 8 )]
 
 [node name="Popup" parent="." instance=ExtResource( 6 )]
@@ -155,7 +157,7 @@ position = Vector2( 266.985, 987.42 )
 position = Vector2( 663.189, 1107.36 )
 
 [node name="Player2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2657.64, 1046.44 )
+position = Vector2( 2960.7, 1064.4 )
 
 [node name="Player3" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1813.53, 227.111 )
