@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://gui/PauseMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/Player.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://common/doors/StudyRoomDoor.tscn" type="PackedScene" id=15]
 [ext_resource path="res://common/candle/light.png" type="Texture" id=16]
 [ext_resource path="res://common/book/RecipeBook.tscn" type="PackedScene" id=17]
+[ext_resource path="res://common/furniture/chute/GarbageChute.tscn" type="PackedScene" id=18]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -146,6 +147,9 @@ tool_name = "Frozen bread with butter knife"
 [node name="Microwave" parent="Furniture/GreenRoom" instance=ExtResource( 12 )]
 position = Vector2( 2965.1, 858.093 )
 collected = "Got a burnt bread and butter knife !!"
+
+[node name="GarbageChute" parent="Furniture/GreenRoom" instance=ExtResource( 18 )]
+position = Vector2( 2753.97, 852.793 )
 
 [node name="BlackScreen" parent="." instance=ExtResource( 8 )]
 
