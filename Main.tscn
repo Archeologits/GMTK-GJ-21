@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://gui/PauseMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/Player.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://common/furniture/Microwave/Microwave.tscn" type="PackedScene" id=12]
 [ext_resource path="res://common/furniture/Bed/Bed.tscn" type="PackedScene" id=13]
 [ext_resource path="res://common/candle/Candles.tscn" type="PackedScene" id=14]
+[ext_resource path="res://common/doors/StudyRoomDoor.tscn" type="PackedScene" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -103,16 +104,19 @@ position = Vector2( 1775.48, 478.039 )
 [node name="Table4" parent="Furniture/RedRoom" instance=ExtResource( 11 )]
 position = Vector2( 1352.96, 479.537 )
 
-[node name="Candles" parent="Furniture/RedRoom" instance=ExtResource( 14 )]
+[node name="StudyRoomDoor" parent="Furniture/RedRoom" instance=ExtResource( 15 )]
+position = Vector2( 1554.79, 228.041 )
+
+[node name="Candle1" parent="Furniture/RedRoom" instance=ExtResource( 14 )]
 position = Vector2( 1798.99, 118.414 )
 
-[node name="Candles2" parent="Furniture/RedRoom" instance=ExtResource( 14 )]
+[node name="Candle2" parent="Furniture/RedRoom" instance=ExtResource( 14 )]
 position = Vector2( 2205.62, 334.908 )
 
-[node name="Candles3" parent="Furniture/RedRoom" instance=ExtResource( 14 )]
+[node name="Candle3" parent="Furniture/RedRoom" instance=ExtResource( 14 )]
 position = Vector2( 1776.77, 475.919 )
 
-[node name="Candles4" parent="Furniture/RedRoom" instance=ExtResource( 14 )]
+[node name="Candle4" parent="Furniture/RedRoom" instance=ExtResource( 14 )]
 position = Vector2( 1353.81, 474.332 )
 
 [node name="CanvasModulate" type="ColorRect" parent="Furniture/RedRoom"]

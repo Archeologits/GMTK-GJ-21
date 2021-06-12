@@ -1,5 +1,5 @@
 extends Area2D
-class_name Candles
+class_name Candle
 
 # Member variables
 export (String) var message : String = "Press 'E' to interact"
@@ -7,6 +7,9 @@ var animation
 
 var last_player : Player
 var state : String = "off"
+
+signal candle_on()
+signal candle_off()
 
 func _ready():
   animation = $AnimationPlayer
@@ -21,9 +24,11 @@ func _switch_state() -> void:
   if state == "on":
     $Light.enabled = true
     animation.play("pulsate")
+    emit_signal("candle_on")
   else:
     animation.stop()
     $Light.enabled = false
+    emit_signal("candle_off")
 
 func _on_player_entered(body : Node2D) -> void:
   if body.is_in_group("Players"):

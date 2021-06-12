@@ -38,7 +38,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 0.972549, 0.470588, 1 ), Color( 0.4, 0.3894, 0.188, 1 ), Color( 1, 0.972549, 0.470588, 1 ) ]
 }
 
-[node name="Candles" type="Area2D"]
+[node name="Candle" type="Area2D"]
 script = ExtResource( 3 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
