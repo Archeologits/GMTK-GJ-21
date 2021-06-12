@@ -142,7 +142,6 @@ position = Vector2( 266.985, 987.42 )
 
 [node name="Fridge" parent="Furniture/GreenRoom" instance=ExtResource( 10 )]
 position = Vector2( 2611.96, 989.708 )
-tool_name = "Frozen bread with butter knife"
 
 [node name="Microwave" parent="Furniture/GreenRoom" instance=ExtResource( 12 )]
 position = Vector2( 2965.1, 858.093 )

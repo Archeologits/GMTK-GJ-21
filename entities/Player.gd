@@ -39,6 +39,8 @@ func _handle_input() -> void:
   if current:
     direction.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
     direction.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
+    if direction.x != 0:
+      direction.y = 0
     if direction != Vector2.ZERO:
       facing = direction
       rotation = direction.angle() #_to_point(Vector2(-2*sign(direction.x), 0).normalized())
