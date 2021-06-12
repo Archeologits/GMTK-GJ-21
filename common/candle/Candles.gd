@@ -3,16 +3,13 @@ class_name Candle
 
 # Member variables
 export (String) var message : String = "Press 'E' to interact"
-var animation
+onready var animation : AnimationPlayer = $AnimationPlayer
 
 var last_player : Player
 var state : String = "off"
 
 signal candle_on()
 signal candle_off()
-
-func _ready():
-  animation = $AnimationPlayer
 
 func interact(body : Player) -> void:
   if body.tools.has("Lighter"):

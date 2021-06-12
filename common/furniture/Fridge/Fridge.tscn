@@ -7,7 +7,7 @@
 extents = Vector2( 16.2497, 32.2169 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 39.142, 45.2982 )
+extents = Vector2( 35, 35 )
 
 [node name="Fridge" type="StaticBody2D"]
 scale = Vector2( 3, 3 )

@@ -41,9 +41,10 @@ func _handle_input() -> void:
     direction.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
     if direction.x != 0:
       direction.y = 0
-    if direction != Vector2.ZERO:
-      facing = direction
-      rotation = direction.angle() #_to_point(Vector2(-2*sign(direction.x), 0).normalized())
+      # TODO :  Write code to play the right animations!! (or use state machine)
+#    if direction != Vector2.ZERO:
+#      facing = direction
+#      rotation = direction.angle() #_to_point(Vector2(-2*sign(direction.x), 0).normalized())
     direction = direction.normalized()
 
 func _apply_movement(delta : float) -> void:

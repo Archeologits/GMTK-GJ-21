@@ -8,12 +8,4 @@ func interact(body : Player) -> void:
     body.collect_tool("Burnt bread")
     body.collect_tool("Butter knife")
     item_collected = true
-    $Sprite.hide()
-    $AnimatedSprite.show()
-    $AnimatedSprite.play()
-    # Todo broken animation possibly
-
-
-func _on_AnimatedSprite_animation_finished():
-  $AnimatedSprite.stop()
-  $AnimatedSprite.hide()
+    $Sprite.play("break")

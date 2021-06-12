@@ -28,8 +28,7 @@ func _ready():
   pause_mode = PAUSE_MODE_PROCESS
   animation_player.play(start_animation)
   options.back_button.connect("pressed", self, "_show_buttons")
-#func _process(_delta):
-#  $BlackScreen.rect_size = get_viewport().size
+
 func _input(event : InputEvent) -> void:
   if event.is_action_pressed("ui_cancel"):
     get_tree().paused = !get_tree().paused # toggle pause status

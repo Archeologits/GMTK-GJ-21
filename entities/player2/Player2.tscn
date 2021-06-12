@@ -42,7 +42,7 @@ extents = Vector2( 50, 50 )
 [sub_resource type="OccluderPolygon2D" id=8]
 polygon = PoolVector2Array( -24, -24, 24, -24, 24, 24, -24, 24 )
 
-[node name="Player1" type="KinematicBody2D" groups=[
+[node name="Player2" type="KinematicBody2D" groups=[
 "Players",
 ]]
 script = ExtResource( 3 )
@@ -59,14 +59,11 @@ frame = 1
 playing = true
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 6 )
 
 [node name="Interaction" type="Area2D" parent="."]
-visible = false
 
 [node name="Shape" type="CollisionShape2D" parent="Interaction"]
-visible = false
 shape = SubResource( 7 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]

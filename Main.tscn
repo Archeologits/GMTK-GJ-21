@@ -1,8 +1,8 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://gui/PauseMenu.tscn" type="PackedScene" id=1]
-[ext_resource path="res://entities/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://entities/player0/Player0.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entities/player2/Player2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/player3/Player3.tscn" type="PackedScene" id=3]
 [ext_resource path="res://textures/BlackWhiteTiles.png" type="Texture" id=4]
 [ext_resource path="res://Main.gd" type="Script" id=5]
 [ext_resource path="res://common/popup/Popup.tscn" type="PackedScene" id=6]
@@ -17,7 +17,9 @@
 [ext_resource path="res://common/doors/StudyRoomDoor.tscn" type="PackedScene" id=15]
 [ext_resource path="res://common/candle/light.png" type="Texture" id=16]
 [ext_resource path="res://common/book/RecipeBook.tscn" type="PackedScene" id=17]
-[ext_resource path="res://common/furniture/chute/GarbageChute.tscn" type="PackedScene" id=18]
+[ext_resource path="res://common/furniture/chute/bedroom/BedroomGarbageChute.tscn" type="PackedScene" id=18]
+[ext_resource path="res://common/furniture/chute/kitchen/KitchenGarbageChute.tscn" type="PackedScene" id=19]
+[ext_resource path="res://common/tools/redkey/RedKey.tscn" type="PackedScene" id=20]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -62,10 +64,11 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 [node name="Main" type="Node2D"]
 script = ExtResource( 5 )
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Tiles" type="Node2D" parent="."]
 position = Vector2( 1211.99, 213.727 )
+z_index = -10
 
-[node name="TileMap" type="TileMap" parent="Node2D"]
+[node name="TileMap" type="TileMap" parent="Tiles"]
 position = Vector2( -1211.99, -213.727 )
 tile_set = SubResource( 2 )
 format = 1
@@ -87,9 +90,11 @@ position = Vector2( 341.422, 1144.93 )
 position = Vector2( 2141.85, 110.748 )
 rotation = -3.14159
 scale = Vector2( 3, -3 )
+z_index = -1
 
 [node name="Table" parent="Furniture/RedRoom" instance=ExtResource( 11 )]
 position = Vector2( 1799.46, 107.957 )
+z_index = -1
 
 [node name="Table2" parent="Furniture/RedRoom" instance=ExtResource( 11 )]
 position = Vector2( 2204, 334.201 )
@@ -116,6 +121,9 @@ position = Vector2( 1776.77, 475.919 )
 [node name="Candle4" parent="Furniture/RedRoom" instance=ExtResource( 14 )]
 position = Vector2( 1353.81, 474.332 )
 
+[node name="BedroomGarbageChute" parent="Furniture/RedRoom" instance=ExtResource( 18 )]
+position = Vector2( 2204.95, 480.749 )
+
 [node name="Light2D" type="Light2D" parent="Furniture/RedRoom"]
 position = Vector2( 1648, 64 )
 scale = Vector2( 2.5, 1 )
@@ -125,6 +133,9 @@ shadow_enabled = true
 
 [node name="RecipeBook" parent="Furniture/RedRoom" instance=ExtResource( 17 )]
 position = Vector2( 1364.92, 276.37 )
+
+[node name="RedKey" parent="Furniture/RedRoom" instance=ExtResource( 20 )]
+position = Vector2( 2020.56, 320.724 )
 
 [node name="Shadow" type="ColorRect" parent="Furniture/RedRoom"]
 margin_left = 1200.0
@@ -145,25 +156,26 @@ position = Vector2( 2611.96, 989.708 )
 
 [node name="Microwave" parent="Furniture/GreenRoom" instance=ExtResource( 12 )]
 position = Vector2( 2965.1, 858.093 )
+z_index = -1
 collected = "Got a burnt bread and butter knife !!"
 
-[node name="GarbageChute" parent="Furniture/GreenRoom" instance=ExtResource( 18 )]
-position = Vector2( 2753.97, 852.793 )
+[node name="KitchenGarbageChute" parent="Furniture/GreenRoom" instance=ExtResource( 19 )]
+position = Vector2( 2751.61, 851.486 )
+
+[node name="Player1" parent="." instance=ExtResource( 7 )]
+position = Vector2( 504.304, 1012.85 )
+
+[node name="Player2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1856.18, 283.936 )
+
+[node name="Player3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2983.45, 1008.61 )
 
 [node name="BlackScreen" parent="." instance=ExtResource( 8 )]
 
 [node name="Popup" parent="." instance=ExtResource( 6 )]
 
 [node name="PauseMenu" parent="." instance=ExtResource( 1 )]
-
-[node name="Player1" parent="." instance=ExtResource( 2 )]
-position = Vector2( 663.189, 1107.36 )
-
-[node name="Player2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2960.7, 1064.4 )
-
-[node name="Player3" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1813.53, 227.111 )
 
 [node name="Room1" type="ReferenceRect" parent="."]
 visible = false
