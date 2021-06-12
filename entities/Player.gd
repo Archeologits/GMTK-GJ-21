@@ -7,14 +7,19 @@ export (int, 0, 4000) var acceleration : int = 2000
 export (int, 0, 100) var max_health : int = 100
 export (bool) var current : bool = true
 
-var has_tool : bool = false
+var interactible = null
+var tools : Array
+#var has_tool : bool = false
 
 var facing : Vector2 = Vector2.RIGHT
 var direction : Vector2 = Vector2.ZERO
 var velocity : Vector2 = Vector2.ZERO
 
+signal interact(Player)
+
 func collect_tool(tool_name : String) -> void:
   # If player enters tool area, tool will call this function
+  print(tool_name)
   pass
 
 func pass_item() -> void:
@@ -28,8 +33,11 @@ func _physics_process(delta : float) -> void:
   _apply_movement(delta)
 
 func _input(event : InputEvent) -> void:
-  if event.is_action_pressed("pass_item"):
-    pass_item()
+  if current:
+    if event.is_action_pressed("pass_item"):
+      pass_item()
+    elif event.is_action_pressed("interact") and interactible != null:
+      interactible.interact(self)
 
 func _handle_input() -> void:
   if current:

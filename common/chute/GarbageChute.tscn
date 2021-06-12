@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="GarbageChute" type="StaticBody2D" groups=[
+"Interactibles",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Interact" type="Area2D" parent="."]
+
+[node name="Interact" type="CollisionShape2D" parent="Interact"]

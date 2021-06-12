@@ -14,6 +14,8 @@ export var SHAKE_TIME = 0.5
 var rooms_rects = []
 var active_player = -1
 
+var room : int = -1
+    
 func _ready():
   black_screen.unfade()
   Util.current_scene = self
@@ -51,8 +53,10 @@ var last_shake_end = 0
 
 func _process(_delta):
   clock += _delta
-  var room = get_room(get_node("Player" + str(active_player)).position)
-  Util.show_message("Currently in Room #" + str(room))
+  var new_room = get_room(get_node("Player" + str(active_player)).position)
+  if new_room != room:
+    room = new_room
+    Util.show_message("Currently in Room #" + str(room))
   var rect = rooms_rects[room - 1]
   var screen_size = get_viewport().size
   var canvas_trans = get_viewport().get_canvas_transform()
