@@ -24,7 +24,7 @@ func pass_item() -> void:
   # Possibly to pass items from one player to another if there is a gap between two rooms
   pass
 
-func _process(delta : float) -> void:
+func _process(_delta : float) -> void:
   _handle_input()
 
 func _physics_process(delta : float) -> void:
@@ -32,9 +32,7 @@ func _physics_process(delta : float) -> void:
 
 func _input(event) -> void:
   if current:
-    if event.is_action_pressed("pass_item"):
-      pass_item()
-    elif event.is_action_pressed("interact") and interactible != null:
+    if event.is_action_pressed("interact") and interactible != null:
       interactible.interact(self)
 
 func _handle_input() -> void:

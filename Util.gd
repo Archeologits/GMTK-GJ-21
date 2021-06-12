@@ -5,8 +5,8 @@ var player : int
 var messages : Dictionary
 
 func set_message_stacks(player_count : int) -> void:
-  for player in range(1, player_count+1):
-    messages[player] = []
+  for i in range(1, player_count+1):
+    messages[i] = []
 
 func push_message(text : String) -> void:
   messages[player].push_back(text)
