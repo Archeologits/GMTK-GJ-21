@@ -11,6 +11,7 @@ var rooms_rects = []
 var active_player = -1
 
 func _ready():
+  Util.current_scene = self
   for i in range(1, PLAYERS + 1):
     players.append(get_node("Player" + str(i)))
 
@@ -40,7 +41,7 @@ func set_active_player():
 
 func _process(_delta):
   var room = get_room(get_node("Player" + str(active_player)).position)
-  print(room)
+  Util.show_message("Currently in Room #" + str(room))
   var rect = rooms_rects[room - 1]
   var screen_size = get_viewport().size
   var canvas_trans = get_viewport().get_canvas_transform()
@@ -53,6 +54,7 @@ func _process(_delta):
   get_viewport().set_canvas_transform(canvas_trans)
   
 
+  
 func _input(event : InputEvent) -> void:
   # Please don't judge this code too harshly (or refactor if deemed necessary)
   # Refactoring done -- sugar, functionality should still be the same
