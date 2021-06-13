@@ -113,6 +113,7 @@ func _process(_delta):
   clock += _delta
   #print(active_player)
   room = get_room(players[active_player-1].position)
+  Sounds.playbgm(room)
   #print("Room:" , room, Globals.data[active_player]["room"])
   if Globals.data[active_player]["room"] != room:
     Globals.data[active_player]["room"] = room
