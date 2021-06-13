@@ -25,6 +25,7 @@ extents = Vector2( 30, 50 )
 
 [node name="PantryDoor" type="AnimatedSprite"]
 scale = Vector2( 1.3, 1.3 )
+z_index = -1
 frames = SubResource( 1 )
 animation = "closed"
 script = ExtResource( 3 )
