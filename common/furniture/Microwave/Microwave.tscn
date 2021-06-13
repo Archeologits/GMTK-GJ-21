@@ -66,13 +66,13 @@ animations = [ {
 extents = Vector2( 32.0067, 23.2979 )
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 59.953, 48.5685 )
+extents = Vector2( 40, 50 )
 
 [node name="Microwave" type="StaticBody2D"]
 script = ExtResource( 1 )
 furniture_name = "Microwave"
 tool_name = "Burnt bread and butter knife"
-collected = "Got a burnt bread and butter!! knife"
+collected = "Got a burnt bread and butter knife!!"
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 10 )

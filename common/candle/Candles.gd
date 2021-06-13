@@ -14,11 +14,13 @@ signal candle_off()
 func interact(body : Player) -> void:
   if body.tools.has("Lighter"):
     _switch_state()
+  else:
+    Util.shake()
 
 func _switch_state() -> void:
-  if state == "on":
-    return
-  state = "on" if state == "off" else "on"
+#  if state == "on":
+#    return
+  state = "on" if state == "off" else "off"
   $Sprite.play(state)
   if state == "on":
     $Light.enabled = true

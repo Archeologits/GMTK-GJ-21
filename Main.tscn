@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://gui/PauseMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/player2/Player2.tscn" type="PackedScene" id=2]
@@ -27,6 +27,7 @@
 [ext_resource path="res://common/doors/PantryDoor/PantryDoor.tscn" type="PackedScene" id=25]
 [ext_resource path="res://common/doors/BlueDoor/BlueDoor.tscn" type="PackedScene" id=26]
 [ext_resource path="res://common/doors/RedDoor/RedDoor.tscn" type="PackedScene" id=27]
+[ext_resource path="res://common/furniture/Oven/Oven.tscn" type="PackedScene" id=28]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -197,6 +198,9 @@ collected = "Got a burnt bread and butter knife !!"
 
 [node name="KitchenGarbageChute" parent="Furniture/GreenRoom" instance=ExtResource( 19 )]
 position = Vector2( 2751.61, 851.486 )
+
+[node name="Oven" parent="Furniture/GreenRoom" instance=ExtResource( 28 )]
+position = Vector2( 3052.83, 857.832 )
 
 [node name="Player1" parent="." instance=ExtResource( 7 )]
 position = Vector2( 621.344, 992.085 )

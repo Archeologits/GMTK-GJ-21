@@ -13,3 +13,6 @@ func interact(body : Player) -> void:
 #    $Audio.play()
 #    yield($Audio, "finished")
 #    queue_free()
+  else:
+    Util.shake()
+    Util.swap_message("I have nothing to microwave")
