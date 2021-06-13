@@ -55,7 +55,6 @@ script = ExtResource( 1 )
 
 [node name="Body" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
-frame = 1
 playing = true
 
 [node name="Collision" type="CollisionShape2D" parent="."]
@@ -71,3 +70,5 @@ shape = SubResource( 7 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource( 8 )
+
+[node name="StaticImage" type="Sprite" parent="."]
