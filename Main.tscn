@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://gui/PauseMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/player2/Player2.tscn" type="PackedScene" id=2]
@@ -8,7 +8,7 @@
 [ext_resource path="res://common/popup/Popup.tscn" type="PackedScene" id=6]
 [ext_resource path="res://entities/player1/Player1.tscn" type="PackedScene" id=7]
 [ext_resource path="res://common/transition/BlackScreen.tscn" type="PackedScene" id=8]
-[ext_resource path="res://common/furniture/Seat/Seat.tscn" type="PackedScene" id=9]
+[ext_resource path="res://common/rottenmeat/RottenMeat.tscn" type="PackedScene" id=9]
 [ext_resource path="res://common/furniture/Fridge/Fridge.tscn" type="PackedScene" id=10]
 [ext_resource path="res://common/inkjar/InkJar.tscn" type="PackedScene" id=11]
 [ext_resource path="res://common/furniture/Microwave/Microwave.tscn" type="PackedScene" id=12]
@@ -19,9 +19,6 @@
 [ext_resource path="res://common/book/RecipeBook.tscn" type="PackedScene" id=17]
 [ext_resource path="res://common/furniture/chute/bedroom/BedroomGarbageChute.tscn" type="PackedScene" id=18]
 [ext_resource path="res://common/furniture/chute/kitchen/KitchenGarbageChute.tscn" type="PackedScene" id=19]
-[ext_resource path="res://common/tools/redkey/RedKey.tscn" type="PackedScene" id=20]
-[ext_resource path="res://common/tools/wine/Wine.tscn" type="PackedScene" id=21]
-[ext_resource path="res://common/tools/rotten_meat/RottenMeat.tscn" type="PackedScene" id=22]
 [ext_resource path="res://common/furniture/Crow/Crow.tscn" type="PackedScene" id=23]
 [ext_resource path="res://common/furniture/Chest/Chest.tscn" type="PackedScene" id=24]
 [ext_resource path="res://common/doors/PantryDoor/PantryDoor.tscn" type="PackedScene" id=25]
@@ -115,11 +112,6 @@ tile_data = PoolIntArray( -196612, 1, 0, -196611, 1, 0, -196610, 1, 0, -196609, 
 position = Vector2( 321.225, 707.189 )
 z_index = -1
 
-[node name="Seat" parent="Furniture/BlueRoom" instance=ExtResource( 9 )]
-position = Vector2( 225.388, 889.412 )
-furniture_name = "Seat"
-collected = "Got a quill!"
-
 [node name="Chest" parent="Furniture/BlueRoom" instance=ExtResource( 24 )]
 position = Vector2( 109.297, 1043.4 )
 
@@ -139,6 +131,9 @@ scale = Vector2( 0.753889, 1.35 )
 [node name="BluePulley" parent="Furniture/BlueRoom" instance=ExtResource( 31 )]
 position = Vector2( 895.636, 1024.18 )
 
+[node name="RedCardPassage" parent="Furniture/BlueRoom" instance=ExtResource( 32 )]
+position = Vector2( 803.025, 793.883 )
+
 [node name="Table" type="StaticBody2D" parent="Furniture/BlueRoom"]
 position = Vector2( 416.791, 888.098 )
 
@@ -146,8 +141,14 @@ position = Vector2( 416.791, 888.098 )
 position = Vector2( 0, 3.36365 )
 shape = SubResource( 3 )
 
-[node name="RedCardPassage" parent="Furniture/BlueRoom" instance=ExtResource( 32 )]
-position = Vector2( 803.025, 793.883 )
+[node name="Walls" type="StaticBody2D" parent="Furniture/BlueRoom"]
+position = Vector2( 115.856, 753.314 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Furniture/BlueRoom/Walls"]
+polygon = PoolVector2Array( -50.2883, 71.0928, 69.9599, 70.252, 69.9599, 11.3892, 525.713, 9.43726, 526.507, 76.1081, 586.828, 76.1081, 590.003, 138.81, 649.531, 140.398, 647.943, 80.8703, 605.083, 78.4892, 603.146, 8.41388, 847.098, 9.82806, 846.391, 79.8317, 719.111, 81.2458, 720.526, 138.521, 888.817, 139.229, 889.184, -112.556, -49.2324, -110.774 )
+
+[node name="RottenMeat" parent="Furniture/BlueRoom" instance=ExtResource( 9 )]
+position = Vector2( 415.856, 869.986 )
 
 [node name="RedRoom" type="Node" parent="Furniture"]
 
@@ -185,15 +186,6 @@ shadow_enabled = true
 [node name="RecipeBook" parent="Furniture/RedRoom" instance=ExtResource( 17 )]
 position = Vector2( 1215.24, 295.711 )
 
-[node name="RedKey" parent="Furniture/RedRoom" instance=ExtResource( 20 )]
-position = Vector2( 1751.17, 294.958 )
-
-[node name="Wine" parent="Furniture/RedRoom" instance=ExtResource( 21 )]
-position = Vector2( 1695.67, 408.992 )
-
-[node name="Rotten meat" parent="Furniture/RedRoom" instance=ExtResource( 22 )]
-position = Vector2( 1469.67, 260.376 )
-
 [node name="Shadow" type="ColorRect" parent="Furniture/RedRoom"]
 margin_left = 985.091
 margin_top = -6.67419
@@ -208,7 +200,7 @@ __meta__ = {
 position = Vector2( 803.841, 789.159 )
 
 [node name="RedDoor" parent="Furniture/RedRoom" instance=ExtResource( 27 )]
-position = Vector2( 1541.45, 541.416 )
+position = Vector2( 1536.61, 555.071 )
 
 [node name="Walls" type="StaticBody2D" parent="Furniture/RedRoom"]
 
@@ -246,10 +238,6 @@ position = Vector2( 2592.13, 726.062 )
 
 [node name="GreenPulley" parent="Furniture/GreenRoom" instance=ExtResource( 30 )]
 position = Vector2( 2175.47, 1023.58 )
-
-[node name="RedKey" parent="Furniture/GreenRoom" instance=ExtResource( 20 )]
-position = Vector2( 2275.17, 858.958 )
-tool_name = "Green key"
 
 [node name="Player1" parent="." instance=ExtResource( 7 )]
 position = Vector2( 653.566, 967.808 )

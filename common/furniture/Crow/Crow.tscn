@@ -7,7 +7,7 @@
 extents = Vector2( 17.1416, 17.3519 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 43.3042, 37.5684 )
+extents = Vector2( 34.2465, 86.0343 )
 
 [node name="Crow" type="StaticBody2D"]
 script = ExtResource( 2 )
