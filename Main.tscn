@@ -90,8 +90,10 @@ tile_data = PoolIntArray( -196612, 1, 0, -196611, 1, 0, -196610, 1, 0, -196609, 
 position = Vector2( 367.604, 866.543 )
 z_index = -1
 
-[node name="Furniture" parent="Furniture/BlueRoom" instance=ExtResource( 9 )]
+[node name="Seat" parent="Furniture/BlueRoom" instance=ExtResource( 9 )]
 position = Vector2( 246.723, 1059.35 )
+furniture_name = "Seat"
+collected = "Got a quill!"
 
 [node name="Table" parent="Furniture/BlueRoom" instance=ExtResource( 11 )]
 position = Vector2( 397.111, 1060.93 )
