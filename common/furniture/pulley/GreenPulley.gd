@@ -1,8 +1,8 @@
 extends Furniture
-class_name BluePulley
+class_name GreenPulley
 
 # Member variables
-onready var other_pulley := get_node("../../GreenRoom/GreenPulley")
+onready var other_pulley := get_node("../../BlueRoom/BluePulley")
 
 func interact(body : Player) -> void:
   if body.tools.has("Recipe") and !item_collected:

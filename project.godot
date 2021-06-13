@@ -50,6 +50,11 @@ _global_script_classes=[ {
 "path": "res://common/furniture/chute/GarbageChute.gd"
 }, {
 "base": "Furniture",
+"class": "GreenPulley",
+"language": "GDScript",
+"path": "res://common/furniture/pulley/GreenPulley.gd"
+}, {
+"base": "Furniture",
 "class": "InkJar",
 "language": "GDScript",
 "path": "res://common/inkjar/InkJar.gd"
@@ -118,6 +123,7 @@ _global_script_class_icons={
 "Door": "",
 "Furniture": "",
 "GarbageChute": "",
+"GreenPulley": "",
 "InkJar": "",
 "KitchenGarbageChute": "",
 "Level": "",
