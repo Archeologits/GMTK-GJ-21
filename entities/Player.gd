@@ -18,10 +18,16 @@ var velocity : Vector2 = Vector2.ZERO
 signal interact(Player)
 signal merge(Player, Player)
 
+var weird_food_counter : int = 0
+
 func collect_tool(tool_name : String) -> void:
   # If player enters tool area, tool will call this function
   print(tool_name)
   tools.push_back(tool_name)
+  if ["Burnt bread", "Rotten meat", "Wine"].has(tool_name):
+    weird_food_counter += 1
+  if weird_food_counter == 3:
+    collect_tool("Weird food")
 
 func pass_item() -> void:
   # Possibly to pass items from one player to another if there is a gap between two rooms
