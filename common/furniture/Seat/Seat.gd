@@ -12,9 +12,10 @@ func _physics_process(delta : float) -> void:
 func interact(body : Player) -> void:
   # Item moves with player
   connected_to_player = !connected_to_player # toggle connection
-  if chair_under_crow:
+  if chair_under_crow and tool_name == "Quill":
     Util.swap_message("Found quill!!")
     body.collect_tool("Quill")
+    tool_name = ""
   elif connected_to_player: # Inherit the chair's collision shape
     last_player = body
     distance_to_player = position - body.position
@@ -39,10 +40,9 @@ func interact(body : Player) -> void:
     $ChairCollision.disabled = false
 
 func _on_crow_entered(body : Node2D) -> void:
-  if body.name == "Crow":
+  if body.name == "Crow" and tool_name == "Quill":
     Util.swap_message("Collect quill? (E)")
     chair_under_crow = true
-#    $Collision.disabled = true # Disable collision -> player can "climb" chair
 
 func _on_crow_exited(body : Node2D) -> void:
   if body.name == "Crow":

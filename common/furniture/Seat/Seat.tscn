@@ -12,6 +12,7 @@ extents = Vector2( 30, 30 )
 [node name="Seat" type="StaticBody2D"]
 scale = Vector2( 2, 2 )
 script = ExtResource( 1 )
+tool_name = "Quill"
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
