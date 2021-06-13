@@ -146,7 +146,6 @@ occluder = SubResource( 2 )
 [node name="Body" type="AnimatedSprite" parent="."]
 frames = SubResource( 19 )
 animation = "up"
-frame = 3
 playing = true
 
 [node name="Collision" type="CollisionShape2D" parent="."]
