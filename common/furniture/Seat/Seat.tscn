@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://common/furniture/Seat/Seat.gd" type="Script" id=1]
 [ext_resource path="res://common/furniture/Seat/seat.png" type="Texture" id=2]
@@ -7,7 +7,10 @@
 extents = Vector2( 17.1416, 17.3519 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 43.3042, 37.5684 )
+extents = Vector2( 40, 40 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 20, 20 )
 
 [node name="Seat" type="StaticBody2D"]
 script = ExtResource( 1 )
@@ -23,4 +26,12 @@ shape = SubResource( 1 )
 [node name="Interact" type="CollisionShape2D" parent="Interact"]
 shape = SubResource( 2 )
 
+[node name="DetectCrow" type="Area2D" parent="."]
+
+[node name="DetectCrow" type="CollisionShape2D" parent="DetectCrow"]
+shape = SubResource( 3 )
+
 [node name="Audio" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="area_entered" from="DetectCrow" to="." method="_on_crow_entered"]
+[connection signal="area_exited" from="DetectCrow" to="." method="_on_crow_exited"]

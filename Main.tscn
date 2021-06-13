@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://gui/PauseMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/player2/Player2.tscn" type="PackedScene" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://common/tools/redkey/RedKey.tscn" type="PackedScene" id=20]
 [ext_resource path="res://common/tools/wine/Wine.tscn" type="PackedScene" id=21]
 [ext_resource path="res://common/tools/rotten_meat/RottenMeat.tscn" type="PackedScene" id=22]
+[ext_resource path="res://common/furniture/Crow/Crow.tscn" type="PackedScene" id=23]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -85,6 +86,9 @@ position = Vector2( 86.0407, 1258.73 )
 
 [node name="Table" parent="Furniture/BlueRoom" instance=ExtResource( 11 )]
 position = Vector2( 341.422, 1144.93 )
+
+[node name="Crow" parent="Furniture/BlueRoom" instance=ExtResource( 23 )]
+position = Vector2( 358.165, 892.971 )
 
 [node name="RedRoom" type="Node" parent="Furniture"]
 
