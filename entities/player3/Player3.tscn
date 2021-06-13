@@ -118,7 +118,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=20]
-extents = Vector2( 24, 30 )
+extents = Vector2( 24, 24 )
 
 [node name="Player3" type="KinematicBody2D" groups=[
 "Players",
@@ -146,10 +146,10 @@ occluder = SubResource( 2 )
 [node name="Body" type="AnimatedSprite" parent="."]
 frames = SubResource( 19 )
 animation = "up"
-frame = 2
+frame = 3
 playing = true
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 12 )
+position = Vector2( 0, 20 )
 z_index = 1
 shape = SubResource( 20 )

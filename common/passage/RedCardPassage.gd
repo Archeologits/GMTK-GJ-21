@@ -4,7 +4,7 @@ var red_key_sent : bool = false
 var last_player : Player
 
 func activate() -> void:
-  $Collision.disabled = true
+  $Collision.disabled = false
   $Light.enabled = true
 
 func interact(body : Player) -> void:
@@ -25,6 +25,7 @@ func interact(body : Player) -> void:
     Util.shake()
 
 func _on_player_entered(body : Node2D) -> void:
+  print("entered")
   if body.is_in_group("Players"):
     Util.push_message("Press 'E' to throw red key")
     body.interactible = self
