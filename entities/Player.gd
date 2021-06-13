@@ -29,10 +29,6 @@ func collect_tool(tool_name : String) -> void:
   if weird_food_counter == 3:
     collect_tool("Weird food")
 
-func pass_item() -> void:
-  # Possibly to pass items from one player to another if there is a gap between two rooms
-  pass
-
 func _process(_delta : float) -> void:
   if direction.length() > 1e-6:
     $Body.show()
@@ -78,10 +74,6 @@ func _handle_input() -> void:
       direction.y = 0
     if direction != Vector2.ZERO:
       facing = direction
-      # TODO :  Write code to play the right animations!! (or use state machine)
-#    if direction != Vector2.ZERO:
-#      facing = direction
-#      rotation = direction.angle() #_to_point(Vector2(-2*sign(direction.x), 0).normalized())
     direction = direction.normalized()
 
 func _apply_movement(delta : float) -> void:

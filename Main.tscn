@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://gui/PauseMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/player2/Player2.tscn" type="PackedScene" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://common/furniture/chute/bedroom/BedroomGarbageChute.tscn" type="PackedScene" id=18]
 [ext_resource path="res://common/furniture/chute/kitchen/KitchenGarbageChute.tscn" type="PackedScene" id=19]
 [ext_resource path="res://common/doors/GreenDoor/GreenDoor.tscn" type="PackedScene" id=20]
+[ext_resource path="res://common/foodbowl/FoodBowl.gd" type="Script" id=21]
 [ext_resource path="res://common/furniture/Crow/Crow.tscn" type="PackedScene" id=23]
 [ext_resource path="res://common/furniture/Chest/Chest.tscn" type="PackedScene" id=24]
 [ext_resource path="res://common/doors/PantryDoor/PantryDoor.tscn" type="PackedScene" id=25]
@@ -243,6 +244,9 @@ position = Vector2( 2175.47, 1023.58 )
 [node name="GreenDoor" parent="Furniture/GreenRoom" instance=ExtResource( 20 )]
 position = Vector2( 2091.33, 927.951 )
 scale = Vector2( -1.35, -1.35 )
+
+[node name="FoodBowl" type="Area2D" parent="Furniture/GreenRoom"]
+script = ExtResource( 21 )
 
 [node name="Player1" parent="." instance=ExtResource( 7 )]
 position = Vector2( 653.566, 967.808 )
