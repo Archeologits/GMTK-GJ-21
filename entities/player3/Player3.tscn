@@ -71,3 +71,5 @@ shape = SubResource( 7 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource( 8 )
+
+[node name="StaticImage" type="Sprite" parent="."]

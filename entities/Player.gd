@@ -25,6 +25,32 @@ func pass_item() -> void:
   pass
 
 func _process(_delta : float) -> void:
+  if direction.length() > 1e-6:
+    $Body.show()
+    $StaticImage.hide()
+  else:
+    $Body.hide()
+    $StaticImage.show()
+    
+  if direction.x > 0:
+    $Body.play("right")
+  elif direction.x < 0:
+    $Body.play("left")
+  elif direction.y < 0:
+    $Body.play("up")
+  elif direction.y > 0:
+    $Body.play("down")
+  else:
+    print(facing)
+    if facing.x > 0:
+      $StaticImage.texture = $Body.frames.get_frame("right", 0)
+    elif facing.x < 0:
+      $StaticImage.texture = $Body.frames.get_frame("left", 1)      
+    elif facing.y < 0:
+      $StaticImage.texture = $Body.frames.get_frame("up", 0)
+    elif facing.y > 0:
+      $StaticImage.texture = $Body.frames.get_frame("down", 0)
+  
   _handle_input()
 
 func _physics_process(delta : float) -> void:
@@ -41,6 +67,8 @@ func _handle_input() -> void:
     direction.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
     if direction.x != 0:
       direction.y = 0
+    if direction != Vector2.ZERO:
+      facing = direction
       # TODO :  Write code to play the right animations!! (or use state machine)
 #    if direction != Vector2.ZERO:
 #      facing = direction
