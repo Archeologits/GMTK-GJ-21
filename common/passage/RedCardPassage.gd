@@ -1,7 +1,6 @@
 extends Area2D
 
 var red_key_sent : bool = false
-var interactible : bool = true
 var last_player : Player
 
 func activate() -> void:
@@ -9,22 +8,40 @@ func activate() -> void:
   $Light.enabled = true
 
 func interact(body : Player) -> void:
-  if body.tools.has("Red key"):
+  if !red_key_sent and body.tools.has("Red key"):
     Util.swap_message("Threw red key through roof!")
     body.tools.erase("Red key")
+    # Soo soo hacky
     red_key_sent = true
+    $Collision.disabled = true
+    $Light.enabled = true
+    $RedKey.visible = true
+    $RedKey/Collision.disabled = false
+  elif red_key_sent:
+    Util.swap_message("Found a red key!!")
+    body.collect_tool("Red key")
+    queue_free()
   else:
     Util.shake()
 
 func _on_player_entered(body : Node2D) -> void:
-  if !red_key_sent and body.is_in_group("Players"):
+  if body.is_in_group("Players"):
     Util.push_message("Press 'E' to throw red key")
     body.interactible = self
     last_player = body
 
 func _on_player_exited(body : Node2D) -> void:
-  if interactible and body == last_player:
+  if body == last_player:
     Util.pop_message()
     body.interactible = null
-    if red_key_sent:
-      queue_free()
+
+func _on_RedKey_body_entered(body):
+  if red_key_sent and body.is_in_group("Players"):
+    Util.push_message("Press 'E' to interact")
+    body.interactible = self
+    last_player = body
+
+func _on_RedKey_body_exited(body):
+  if body == last_player:
+    Util.pop_message()
+    body.interactible = null
