@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/door_open.png-5fb29630548630ae825792c2a0d6f602.stex"
+path="res://.import/door2_open.png-7df48f0a48ed2e477a5a597830746b52.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://common/doors/PantryDoor/door_open.png"
-dest_files=[ "res://.import/door_open.png-5fb29630548630ae825792c2a0d6f602.stex" ]
+source_file="res://common/doors/BlueDoor/door2_open.png"
+dest_files=[ "res://.import/door2_open.png-7df48f0a48ed2e477a5a597830746b52.stex" ]
 
 [params]
 
