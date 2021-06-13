@@ -6,7 +6,7 @@ var interactible : bool = true
 var last_player : Player
 
 func interact(body : Player) -> void:
-  if body.has("Weird food"):
+  if body.tools.has("Weird food"):
     Util.swap_message("Found green key!!")
     body.tools.erase("Weird food")
     body.collect_tool("Green key")
