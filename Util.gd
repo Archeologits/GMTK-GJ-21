@@ -6,7 +6,7 @@ var messages : Dictionary
 
 func set_message_stacks(player_count : int) -> void:
   for i in range(1, player_count+1):
-    messages[i] = []
+    messages[i] = ["Press 1 for blue, 2 for red, 3 for green"]
 
 func push_message(text : String) -> void:
   messages[player].push_back(text)
