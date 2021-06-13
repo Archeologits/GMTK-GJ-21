@@ -15,7 +15,13 @@ var rooms_rects = []
 var active_player = -1
 
 var room : int = -1
-    
+
+func _on_merge(player1 : Player, player2 : Player) -> void:
+  print("merging")
+#  players.erase(player1)
+#  players.erase(player2)
+  pass
+
 func _ready():
   black_screen.unfade()
   Util.current_scene = self

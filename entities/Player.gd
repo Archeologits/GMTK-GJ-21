@@ -15,6 +15,7 @@ var direction : Vector2 = Vector2.ZERO
 var velocity : Vector2 = Vector2.ZERO
 
 signal interact(Player)
+signal merge(Player, Player)
 
 func collect_tool(tool_name : String) -> void:
   # If player enters tool area, tool will call this function
@@ -79,3 +80,7 @@ func _handle_input() -> void:
 func _apply_movement(delta : float) -> void:
   velocity = velocity.move_toward(direction*speed, acceleration*delta)
   velocity = move_and_slide(velocity)
+
+func _on_Interaction_body_entered(body : Node2D) -> void:
+  if body.is_in_group("Players") and body != self:
+    emit_signal("merge", self, body)
