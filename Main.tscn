@@ -206,6 +206,7 @@ shape = SubResource( 5 )
 
 [node name="InkJar" parent="Furniture/RedRoom" instance=ExtResource( 11 )]
 position = Vector2( 1238.39, 149.002 )
+z_index = -1
 
 [node name="GreenRoom" type="Node" parent="Furniture"]
 
