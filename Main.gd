@@ -19,20 +19,38 @@ var merges = 0
 var player4
 var player5
 
+func merge_into(a : Player, b : Player, c:Player):
+  for item in a.tools:
+    c.tools.append(item)
+  for item in b.tools:
+    c.tools.append(item)
+  c.position = b.position
+
 func _on_merge(player1 : Player, player2 : Player) -> void:
   print("merging")
   if merges == 0:
-    players[1].queue_free()
-    players[2].queue_free()
-    players[2] = player4
+    merge_into(players[0], players[1], player4)
+
+    remove_child(players[0])
+    remove_child(players[1])
+    
+    players[1] = player4
+    add_child(player4)
     merges += 1
     set_player(2)
     # SET BASE MESSAGE
     return
   else:
-    players[2].queue_free()
-    players[3].queue_free()
-    players[3] = player5
+
+    merge_into(players[2], players[1], player5)
+    
+    remove_child(players[1])
+    remove_child(players[2])
+    
+    players[2] = player5
+    add_child(player5)
+
+    merges += 1
     # SET BASE MESSAGE
     set_player(3)
 
@@ -84,7 +102,8 @@ var last_shake_end = 0
 
 func _process(_delta):
   clock += _delta
-  room = get_room(get_node("Player" + str(active_player)).position)
+  print(active_player)
+  room = get_room(players[active_player-1].position)
   #print("Room:" , room, Globals.data[active_player]["room"])
   if Globals.data[active_player]["room"] != room:
     Globals.data[active_player]["room"] = room
