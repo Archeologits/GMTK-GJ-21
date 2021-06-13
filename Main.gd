@@ -15,9 +15,10 @@ var rooms_rects = []
 var active_player = -1
 
 var room : int = -1
-var merges = 0
+
 var player4
 var player5
+var merges
 
 func merge_into(a : Player, b : Player, c:Player):
   for item in a.tools:
@@ -26,9 +27,12 @@ func merge_into(a : Player, b : Player, c:Player):
     c.tools.append(item)
   c.position = b.position
 
+func checkid(a, b, x, y):
+  return (a.id == x and b.id == y) or (a.id == y and b.id == x)
+
 func _on_merge(player1 : Player, player2 : Player) -> void:
-  print("merging")
-  if merges == 0:
+  print("merging", merges, "/", player1.id, "/", player2.id)
+  if checkid(player1, player2, "R", "B"):
     merge_into(players[0], players[1], player4)
 
     remove_child(players[0])
@@ -40,8 +44,8 @@ func _on_merge(player1 : Player, player2 : Player) -> void:
     set_player(2)
     # SET BASE MESSAGE
     return
-  else:
-
+  elif checkid(player1, player2, "RB", "G"):
+    print("ok")
     merge_into(players[2], players[1], player5)
     
     remove_child(players[1])
@@ -49,8 +53,8 @@ func _on_merge(player1 : Player, player2 : Player) -> void:
     
     players[2] = player5
     add_child(player5)
-
     merges += 1
+
     # SET BASE MESSAGE
     set_player(3)
 
@@ -58,12 +62,17 @@ func _ready():
   player4 = preload("res://entities/player4/Player4.tscn").instance()
   player5 = preload("res://entities/player5/Player5.tscn").instance()
   
+  merges = 0
+  player4.id = "RB"
+  player5.id = "RGB"
   black_screen.unfade()
   Util.current_scene = self
   Util.set_message_stacks(PLAYERS)
   for i in range(1, PLAYERS + 1):
     players.append(get_node("Player" + str(i)))
-
+  players[0].id = "B"
+  players[1].id = "R"
+  players[2].id = "G"
   set_player(1)
   
   for i in range(1, ROOMS + 1):
@@ -102,7 +111,7 @@ var last_shake_end = 0
 
 func _process(_delta):
   clock += _delta
-  print(active_player)
+  #print(active_player)
   room = get_room(players[active_player-1].position)
   #print("Room:" , room, Globals.data[active_player]["room"])
   if Globals.data[active_player]["room"] != room:

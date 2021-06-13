@@ -6,6 +6,7 @@ export (int, 0, 2000) var speed : int = 400
 export (int, 0, 4000) var acceleration : int = 2000
 export (int, 0, 100) var max_health : int = 100
 export (bool) var current : bool = true
+var id = ""
 
 var interactible = null
 var tools : Array
@@ -82,5 +83,5 @@ func _apply_movement(delta : float) -> void:
   velocity = move_and_slide(velocity)
 
 func _on_Interaction_body_entered(body : Node2D) -> void:
-  if body.is_in_group("Players") and body != self:
+  if body.is_in_group("Players"):
     emit_signal("merge", self, body)
