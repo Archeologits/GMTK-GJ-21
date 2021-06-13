@@ -44,7 +44,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://common/furniture/chute/GarbageChute.gd"
 }, {
-"base": "Area2D",
+"base": "Furniture",
 "class": "InkJar",
 "language": "GDScript",
 "path": "res://common/inkjar/InkJar.gd"
