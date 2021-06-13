@@ -247,6 +247,10 @@ position = Vector2( 2592.13, 726.062 )
 [node name="GreenPulley" parent="Furniture/GreenRoom" instance=ExtResource( 30 )]
 position = Vector2( 2175.47, 1023.58 )
 
+[node name="RedKey" parent="Furniture/GreenRoom" instance=ExtResource( 20 )]
+position = Vector2( 2275.17, 858.958 )
+tool_name = "Green key"
+
 [node name="Player1" parent="." instance=ExtResource( 7 )]
 position = Vector2( 653.566, 967.808 )
 
