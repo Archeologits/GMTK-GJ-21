@@ -22,12 +22,12 @@ var weird_food_counter : int = 0
 
 func collect_tool(tool_name : String) -> void:
   # If player enters tool area, tool will call this function
-  print(tool_name)
   tools.push_back(tool_name)
   if ["Burnt bread", "Rotten meat", "Wine"].has(tool_name):
     weird_food_counter += 1
-  if weird_food_counter == 3:
-    collect_tool("Weird food")
+    if weird_food_counter == 3:
+      weird_food_counter = 0 # This is a safety precaution
+      collect_tool("Weird food")
 
 func _process(_delta : float) -> void:
   if direction.length() > 1e-6:
