@@ -21,6 +21,7 @@ func _switch_state() -> void:
   state = "on" if state == "off" else "off"
   $Sprite.play(state)
   if state == "on":
+    Sounds.play("candle_light")
     $Light.enabled = true
     animation.play("pulsate")
     emit_signal("candle_on")
