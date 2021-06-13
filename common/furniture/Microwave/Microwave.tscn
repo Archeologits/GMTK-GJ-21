@@ -69,6 +69,7 @@ extents = Vector2( 32.0067, 23.2979 )
 extents = Vector2( 40, 50 )
 
 [node name="Microwave" type="StaticBody2D"]
+scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 1 )
 furniture_name = "Microwave"
 tool_name = "Burnt bread and butter knife"
