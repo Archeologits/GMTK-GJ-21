@@ -5,7 +5,8 @@ var interactible : bool = true
 var last_player : Player
 
 func activate() -> void:
-  pass
+  $Collision.disabled = true
+  $Light.enabled = true
 
 func interact(body : Player) -> void:
   if body.tools.has("Red key"):

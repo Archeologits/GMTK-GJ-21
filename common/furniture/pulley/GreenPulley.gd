@@ -9,6 +9,7 @@ func interact(body : Player) -> void:
     Util.swap_message(collected)
     body.collect_tool("Recipe")
     item_collected = true
+    $RecipeBook.queue_free()
 #    $Audio.play()
   else:
     Util.shake()
