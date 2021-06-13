@@ -27,6 +27,10 @@ func collect_tool(tool_name : String) -> void:
     weird_food_counter += 1
     if weird_food_counter == 3:
       weird_food_counter = 0 # This is a safety precaution
+      Util.push_message("Made weird food")
+      tools.erase("Burnt bread")
+      tools.erase("Rotten meat")
+      tools.erase("Wine")      
       collect_tool("Weird food")
 
 func _process(_delta : float) -> void:

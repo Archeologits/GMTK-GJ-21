@@ -20,7 +20,7 @@
 [ext_resource path="res://common/furniture/chute/bedroom/BedroomGarbageChute.tscn" type="PackedScene" id=18]
 [ext_resource path="res://common/furniture/chute/kitchen/KitchenGarbageChute.tscn" type="PackedScene" id=19]
 [ext_resource path="res://common/doors/GreenDoor/GreenDoor.tscn" type="PackedScene" id=20]
-[ext_resource path="res://common/foodbowl/FoodBowl.gd" type="Script" id=21]
+[ext_resource path="res://common/foodbowl/FoodBowl.tscn" type="PackedScene" id=21]
 [ext_resource path="res://common/furniture/Crow/Crow.tscn" type="PackedScene" id=23]
 [ext_resource path="res://common/furniture/Chest/Chest.tscn" type="PackedScene" id=24]
 [ext_resource path="res://common/doors/PantryDoor/PantryDoor.tscn" type="PackedScene" id=25]
@@ -247,8 +247,8 @@ position = Vector2( 2175.47, 1023.58 )
 position = Vector2( 2091.33, 927.951 )
 scale = Vector2( -1.35, -1.35 )
 
-[node name="FoodBowl" type="Area2D" parent="Furniture/GreenRoom"]
-script = ExtResource( 21 )
+[node name="FoodBowl" parent="Furniture/GreenRoom" instance=ExtResource( 21 )]
+position = Vector2( 2976.59, 915.095 )
 
 [node name="Player1" parent="." instance=ExtResource( 7 )]
 position = Vector2( 653.566, 967.808 )
