@@ -86,37 +86,27 @@ mouse_filter = 0
 alignment = 1
 
 [node name="Buttons" type="VBoxContainer" parent="MainMenu/HBox"]
-margin_left = 402.0
-margin_right = 611.0
+margin_left = 405.0
+margin_right = 608.0
 margin_bottom = 590.0
 size_flags_vertical = 3
 custom_constants/separation = 10
 alignment = 1
 
 [node name="NewGame" type="Button" parent="MainMenu/HBox/Buttons"]
-margin_top = 140.0
-margin_right = 209.0
-margin_bottom = 212.0
+margin_top = 181.0
+margin_right = 203.0
+margin_bottom = 253.0
 text = "New Game"
 align = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LoadGame" type="Button" parent="MainMenu/HBox/Buttons"]
-margin_top = 222.0
-margin_right = 209.0
-margin_bottom = 294.0
-text = "Load Game"
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Options" type="Button" parent="MainMenu/HBox/Buttons"]
-margin_top = 304.0
-margin_right = 209.0
-margin_bottom = 376.0
+margin_top = 263.0
+margin_right = 203.0
+margin_bottom = 335.0
 text = "Options"
 align = 0
 __meta__ = {
@@ -124,9 +114,9 @@ __meta__ = {
 }
 
 [node name="Version" type="Label" parent="MainMenu/HBox/Buttons"]
-margin_top = 386.0
-margin_right = 209.0
-margin_bottom = 449.0
+margin_top = 345.0
+margin_right = 203.0
+margin_bottom = 408.0
 text = "v 0.0.1
 Archeologits"
 
@@ -195,5 +185,4 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="MainMenu/HBox/Buttons/NewGame" to="." method="_new_game"]
-[connection signal="pressed" from="MainMenu/HBox/Buttons/LoadGame" to="." method="_show_load_list"]
 [connection signal="pressed" from="MainMenu/HBox/Buttons/Options" to="." method="_options"]
