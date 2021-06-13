@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wallchute.png-a2f2bb36be5a5b9878852b14b183bbca.stex"
+path="res://.import/crow.png-35b8dd54523f45b716ddbd3c658dbc24.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://common/furniture/chute/kitchen/wallchute.png"
-dest_files=[ "res://.import/wallchute.png-a2f2bb36be5a5b9878852b14b183bbca.stex" ]
+source_file="res://common/furniture/Crow/crow.png"
+dest_files=[ "res://.import/crow.png-35b8dd54523f45b716ddbd3c658dbc24.stex" ]
 
 [params]
 

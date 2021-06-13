@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wallchute.png-a2f2bb36be5a5b9878852b14b183bbca.stex"
+path="res://.import/chest_closed.png-f8541f6e543f0e3f405f241049a6d8a9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://common/furniture/chute/kitchen/wallchute.png"
-dest_files=[ "res://.import/wallchute.png-a2f2bb36be5a5b9878852b14b183bbca.stex" ]
+source_file="res://common/furniture/Chest/chest_closed.png"
+dest_files=[ "res://.import/chest_closed.png-f8541f6e543f0e3f405f241049a6d8a9.stex" ]
 
 [params]
 
