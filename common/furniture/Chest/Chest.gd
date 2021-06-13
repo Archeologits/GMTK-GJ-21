@@ -7,3 +7,5 @@ func interact(body : Player) -> void:
     item_collected = true
     $Sprite.play("open")
 #    $Audio.play()
+  else:
+    Util.shake()

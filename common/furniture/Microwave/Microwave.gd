@@ -11,8 +11,6 @@ func interact(body : Player) -> void:
     $Sprite.play("break")
     # If audio added - simply uncomment the following
 #    $Audio.play()
-#    yield($Audio, "finished")
-#    queue_free()
   else:
     Util.shake()
     Util.swap_message("I have nothing to microwave")

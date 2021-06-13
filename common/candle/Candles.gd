@@ -18,8 +18,6 @@ func interact(body : Player) -> void:
     Util.shake()
 
 func _switch_state() -> void:
-#  if state == "on":
-#    return
   state = "on" if state == "off" else "off"
   $Sprite.play(state)
   if state == "on":
