@@ -18,6 +18,7 @@ signal interact(Player)
 
 func collect_tool(tool_name : String) -> void:
   # If player enters tool area, tool will call this function
+  print(tool_name)
   tools.push_back(tool_name)
 
 func pass_item() -> void:

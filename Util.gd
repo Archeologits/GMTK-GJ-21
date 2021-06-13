@@ -12,6 +12,9 @@ func push_message(text : String) -> void:
   messages[player].push_back(text)
   _update_message()
 
+func get_player():
+  return current_scene.players[current_scene.active_player - 1]
+
 func swap_message(text : String) -> void:
   if !messages[player].empty():
     messages[player][-1] = text
