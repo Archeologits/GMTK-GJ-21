@@ -24,10 +24,10 @@ func interact(body : Player) -> void:
     red_key_received = true
     $RedKey.visible = false
   else:
+    Util.swap_message("...")
     Util.shake()
 
 func _on_player_entered(body : Node2D) -> void:
-  print("entered")
   if body.is_in_group("Players"):
     Util.push_message("Press 'E' to throw red key")
     body.interactible = self
@@ -40,7 +40,7 @@ func _on_player_exited(body : Node2D) -> void:
 
 func _on_RedKey_body_entered(body):
   if red_key_sent and body.is_in_group("Players"):
-    Util.push_message("Press 'E' to interact")
+    Util.push_message("Press 'E' to pick up red key")
     body.interactible = self
     last_player = body
 
