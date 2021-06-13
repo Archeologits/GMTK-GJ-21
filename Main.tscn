@@ -110,7 +110,8 @@ position = Vector2( 339.228, 1055.86 )
 position = Vector2( 458.635, 1056.7 )
 
 [node name="BlueDoor" parent="Furniture/BlueRoom" instance=ExtResource( 26 )]
-position = Vector2( 973.298, 1120.07 )
+position = Vector2( 960.124, 1120 )
+scale = Vector2( 0.753889, 1.35 )
 
 [node name="RedRoom" type="Node" parent="Furniture"]
 
