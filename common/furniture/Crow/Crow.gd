@@ -8,7 +8,7 @@ func interact(body : Player) -> void:
     Util.swap_message("Got a quill!")
     body.collect_tool("Quill")
     quill_collected = true
-  if body.tools.has("Butter knife") and !item_collected:
+  elif body.tools.has("Butter knife") and !item_collected:
     Util.swap_message("Got a stuffed crow!")
     body.collect_tool("Stuffed crow")
     item_collected = true

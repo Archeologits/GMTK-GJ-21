@@ -146,9 +146,12 @@ occluder = SubResource( 2 )
 [node name="Body" type="AnimatedSprite" parent="."]
 frames = SubResource( 19 )
 animation = "up"
+frame = 1
 playing = true
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 20 )
 z_index = 1
 shape = SubResource( 20 )
+
+[connection signal="body_entered" from="Interaction" to="." method="_on_Interaction_body_entered"]

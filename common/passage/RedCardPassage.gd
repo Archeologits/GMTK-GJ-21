@@ -1,6 +1,7 @@
 extends Area2D
 
 var red_key_sent : bool = false
+var red_key_received : bool = false
 var last_player : Player
 
 func activate() -> void:
@@ -20,7 +21,6 @@ func interact(body : Player) -> void:
   elif red_key_sent:
     Util.swap_message("Found a red key!!")
     body.collect_tool("Red key")
-    queue_free()
   else:
     Util.shake()
 
@@ -46,3 +46,5 @@ func _on_RedKey_body_exited(body):
   if body == last_player:
     Util.pop_message()
     body.interactible = null
+    if red_key_received:
+      queue_free()
