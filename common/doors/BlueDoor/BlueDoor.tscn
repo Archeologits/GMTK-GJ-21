@@ -28,6 +28,7 @@ scale = Vector2( 1.35, 1.35 )
 frames = SubResource( 1 )
 animation = "closed"
 script = ExtResource( 1 )
+door_name = "Blue door"
 key_name = "Blue key"
 
 [node name="Collision" type="StaticBody2D" parent="."]

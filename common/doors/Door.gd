@@ -2,7 +2,7 @@ extends AnimatedSprite
 class_name Door
 
 # Member variables
-export (String) var door_name : String = "Furniture"
+export (String) var door_name : String = "Door"
 export (String) var key_name : String = ""
 export (String) var message : String = "Press 'E' to interact"
 export (String) var closed : String = "Can't open"
