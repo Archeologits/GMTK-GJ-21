@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/winebottle.png-b49a4627ffb5102643398f69067229b5.stex"
+path="res://.import/winebottle.png-77146698a5a711125c800520878c61c9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://common/winebottle.png"
-dest_files=[ "res://.import/winebottle.png-b49a4627ffb5102643398f69067229b5.stex" ]
+source_file="res://common/tools/wine/winebottle.png"
+dest_files=[ "res://.import/winebottle.png-77146698a5a711125c800520878c61c9.stex" ]
 
 [params]
 

@@ -3,7 +3,7 @@ class_name Candle
 
 # Member variables
 export (String) var message : String = "Press 'E' to interact"
-onready var animation : AnimationPlayer = $AnimationPlayer
+onready var animation : AnimationPlayer = $Animation
 
 var last_player : Player
 var state : String = "off"

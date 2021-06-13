@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://gui/PauseMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/player2/Player2.tscn" type="PackedScene" id=2]
@@ -20,6 +20,8 @@
 [ext_resource path="res://common/furniture/chute/bedroom/BedroomGarbageChute.tscn" type="PackedScene" id=18]
 [ext_resource path="res://common/furniture/chute/kitchen/KitchenGarbageChute.tscn" type="PackedScene" id=19]
 [ext_resource path="res://common/tools/redkey/RedKey.tscn" type="PackedScene" id=20]
+[ext_resource path="res://common/tools/wine/Wine.tscn" type="PackedScene" id=21]
+[ext_resource path="res://common/tools/rotten_meat/RottenMeat.tscn" type="PackedScene" id=22]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -92,7 +94,7 @@ rotation = -3.14159
 scale = Vector2( 3, -3 )
 z_index = -1
 
-[node name="Table" parent="Furniture/RedRoom" instance=ExtResource( 11 )]
+[node name="Table1" parent="Furniture/RedRoom" instance=ExtResource( 11 )]
 position = Vector2( 1799.46, 107.957 )
 z_index = -1
 
@@ -136,6 +138,12 @@ position = Vector2( 1364.92, 276.37 )
 
 [node name="RedKey" parent="Furniture/RedRoom" instance=ExtResource( 20 )]
 position = Vector2( 2020.56, 320.724 )
+
+[node name="Wine" parent="Furniture/RedRoom" instance=ExtResource( 21 )]
+position = Vector2( 1947.84, 448.532 )
+
+[node name="Rotten meat" parent="Furniture/RedRoom" instance=ExtResource( 22 )]
+position = Vector2( 1698.52, 342.879 )
 
 [node name="Shadow" type="ColorRect" parent="Furniture/RedRoom"]
 margin_left = 1200.0

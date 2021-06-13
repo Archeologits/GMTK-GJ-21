@@ -9,3 +9,7 @@ func interact(body : Player) -> void:
     body.collect_tool("Butter knife")
     item_collected = true
     $Sprite.play("break")
+    # If audio added - simply uncomment the following
+#    $Audio.play()
+#    yield($Audio, "finished")
+#    queue_free()

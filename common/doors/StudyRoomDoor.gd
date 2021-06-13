@@ -16,7 +16,9 @@ func _ready():
 func _on_candle_on() -> void:
   candle_count += 1
   if candle_count == max_candle_count:
-    # To Do - make sound on transition
+# Uncomment next two lines when/if audio is added
+#    $Audio.play()
+#    yield($Audio, "finished")
     queue_free()
 
 func _on_candle_off() -> void:
