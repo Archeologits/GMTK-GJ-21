@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://gui/PauseMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/player2/Player2.tscn" type="PackedScene" id=2]
@@ -32,6 +32,7 @@
 [ext_resource path="res://common/furniture/pulley/GreenPulley.tscn" type="PackedScene" id=30]
 [ext_resource path="res://common/furniture/pulley/BluePulley.tscn" type="PackedScene" id=31]
 [ext_resource path="res://common/passage/RedCardPassage.tscn" type="PackedScene" id=32]
+[ext_resource path="res://sounds/awesome_music.wav" type="AudioStream" id=33]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -301,8 +302,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 33 )
+volume_db = 0.5
+autoplay = true
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="merge" from="Player1" to="." method="_on_merge"]
 [connection signal="merge" from="Player2" to="." method="_on_merge"]
 [connection signal="merge" from="Player3" to="." method="_on_merge"]
+

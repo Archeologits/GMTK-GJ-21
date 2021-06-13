@@ -6,8 +6,8 @@ var last_played = ""
 
 func _ready():
   sounds["candle_light"] = [preload("res://sounds/effects/candle_light.wav"), 10]
-  sounds["footstep"] = [preload("res://sounds/effects/footstep.wav"), 0]
-  sounds["bluespark_footstep"] = [preload("res://sounds/effects/bluespark_footstep.wav"), 0]
+  sounds["footstep"] = [preload("res://sounds/effects/new_footstep.wav"), 0]
+  #sounds["footstep"] = [preload("res://sounds/effects/bluespark_footstep.wav"), 0]
   sounds["garbage_chute"] = [preload("res://sounds/effects/garbage_chute.wav"), 10]
   sounds["lighter_use"] = [preload("res://sounds/effects/lighter_use.wav"), 10]
   sounds["microwave_explode"] = [preload("res://sounds/effects/microwave.wav"), 10]
@@ -15,6 +15,7 @@ func _ready():
   pass  
 
 func play(name):
+  #print(name)
   var audio = Util.current_scene.get_node("AudioPlayer")
   if !audio.is_playing():
     audio.stream = sounds[name][0]
