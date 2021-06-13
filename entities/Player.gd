@@ -41,7 +41,6 @@ func _process(_delta : float) -> void:
   elif direction.y > 0:
     $Body.play("down")
   else:
-    print(facing)
     if facing.x > 0:
       $StaticImage.texture = $Body.frames.get_frame("right", 0)
     elif facing.x < 0:

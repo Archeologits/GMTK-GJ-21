@@ -21,6 +21,8 @@ func interact(body : Player) -> void:
     Util.swap_message(collected)
     body.collect_tool(tool_name)
     item_collected = true
+  else:
+    Util.shake()
 
 func _on_player_entered(body : Node2D) -> void:
   if !item_collected and body.is_in_group("Players"):
