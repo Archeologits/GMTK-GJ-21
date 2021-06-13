@@ -5,7 +5,7 @@ var players = []
 
 onready var popup : PopupDialog = $Popup/Popup
 onready var black_screen : BlackScreen = $BlackScreen
-export var ROOMS = 6
+export var ROOMS = 4
 export var PLAYERS = 3
 export var NUMBER_OF_SHAKES = 3
 export var SHAKE_INTENSITY = 10
@@ -27,13 +27,18 @@ func _ready():
   
   for i in range(1, ROOMS + 1):
     rooms_rects.append(get_node("Room" + str(i)).get_rect())
+    print(rooms_rects[-1])
   popup.show() # This should be shown when doors are unlocked, etc.
 
+var last_room
+
 func get_room(pos):
+  #print("Position:", pos)
   for i in range(0, ROOMS):
     if rooms_rects[i].has_point(pos):
-      return i + 1
-  return -1
+      last_room = i + 1
+      return last_room
+  return last_room
 
 func set_player(i):
   for j in range(0, PLAYERS):
@@ -57,9 +62,10 @@ var last_shake_end = 0
 func _process(_delta):
   clock += _delta
   room = get_room(get_node("Player" + str(active_player)).position)
+  #print("Room:" , room, Globals.data[active_player]["room"])
   if Globals.data[active_player]["room"] != room:
     Globals.data[active_player]["room"] = room
-    Util.push_message("Currently in Room #" + str(room))
+    #Util.push_message("Currently in Room #" + str(room))
   var rect = rooms_rects[room - 1]
   var screen_size = get_viewport().size
   var canvas_trans = get_viewport().get_canvas_transform()
