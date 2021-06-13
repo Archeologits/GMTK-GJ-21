@@ -19,6 +19,7 @@ func interact(body : Player) -> void:
     body.collect_tool("Recipe")
     Util.swap_message("Found recipe: 'Bread, Meat, Wine'")
     item_collected = true
+    $Sprite.visible = false
   
 func _on_player_entered(body : Node2D) -> void:
   if body.is_in_group("Players"):

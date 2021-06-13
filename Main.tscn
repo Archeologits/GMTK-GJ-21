@@ -226,6 +226,7 @@ z_index = -1
 
 [node name="Fridge" parent="Furniture/GreenRoom" instance=ExtResource( 10 )]
 position = Vector2( 2462.05, 737.533 )
+z_index = -1
 
 [node name="Microwave" parent="Furniture/GreenRoom" instance=ExtResource( 12 )]
 position = Vector2( 2719.3, 713.734 )
@@ -237,6 +238,7 @@ position = Vector2( 2240.04, 693.521 )
 
 [node name="Oven" parent="Furniture/GreenRoom" instance=ExtResource( 28 )]
 position = Vector2( 2592.13, 726.062 )
+z_index = -1
 
 [node name="GreenPulley" parent="Furniture/GreenRoom" instance=ExtResource( 30 )]
 position = Vector2( 2175.47, 1023.58 )
