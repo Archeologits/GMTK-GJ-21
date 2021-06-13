@@ -15,14 +15,31 @@ var rooms_rects = []
 var active_player = -1
 
 var room : int = -1
+var merges = 0
+var player4
+var player5
 
 func _on_merge(player1 : Player, player2 : Player) -> void:
   print("merging")
-#  players.erase(player1)
-#  players.erase(player2)
-  pass
+  if merges == 0:
+    players[1].queue_free()
+    players[2].queue_free()
+    players[2] = player4
+    merges += 1
+    set_player(2)
+    # SET BASE MESSAGE
+    return
+  else:
+    players[2].queue_free()
+    players[3].queue_free()
+    players[3] = player5
+    # SET BASE MESSAGE
+    set_player(3)
 
 func _ready():
+  player4 = preload("res://entities/player4/Player4.tscn").instance()
+  player5 = preload("res://entities/player5/Player5.tscn").instance()
+  
   black_screen.unfade()
   Util.current_scene = self
   Util.set_message_stacks(PLAYERS)
@@ -105,7 +122,7 @@ func _input(event : InputEvent) -> void:
     Util.shake()
     return
   for i in range(1, PLAYERS + 1):
-    if event.is_action_pressed("player" + str(i)) and active_player != i:
+    if event.is_action_pressed("player" + str(i)) and active_player != i and i >= merges + 1:
       black_screen.fade()
       yield(black_screen.animation_player, "animation_finished")
       set_player(i)
