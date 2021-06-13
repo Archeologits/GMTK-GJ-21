@@ -7,13 +7,13 @@
 extents = Vector2( 50, 50 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 100, 100 )
+extents = Vector2( 100, 50 )
 
 [node name="BluePulley" type="StaticBody2D"]
 script = ExtResource( 1 )
-furniture_name = "Blue chute"
+furniture_name = "Blue pulley"
 tool_name = "Red key"
-collected = "Found a red key!!"
+collected = "\"Sent recipe book and found a red key!!\""
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )

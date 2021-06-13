@@ -19,24 +19,27 @@ func interact(body : Player) -> void:
   elif connected_to_player: # Inherit the chair's collision shape
     last_player = body
     distance_to_player = position - body.position
-    var new_collision = CollisionShape2D.new()
-    new_collision.name = "ChairCollision"
-    new_collision.shape = $ChairCollision.shape
-#    new_collision.scale = $ChairCollision.scale
-    new_collision.position = $pos.global_position
+
+#    var new_collision = CollisionShape2D.new()
+#    new_collision.name = "ChairCollision"
+#    new_collision.shape = $ChairCollision.shape
+#    new_collision.position = $pos.global_position
+  
 #    var chair_collision = $ChairCollision
 #    remove_child(chair_collision)
 #    chair_collision.position = $pos.global_position
 #    body.add_child(chair_collision)
-    body.add_child(new_collision)
+
+#    body.add_child(new_collision)
     $ChairCollision.disabled = true
-    print($pos.global_position)
-    print(body.position)
+
   else: # Return the collision shape to the chair
-    var chair_collision = body.get_node("ChairCollision")
-    body.remove_child(chair_collision)
+#    var chair_collision = body.get_node("ChairCollision")
+#    body.remove_child(chair_collision)
+
 #    chair_collision.position = $pos.position
 #    add_child(chair_collision)
+
     $ChairCollision.disabled = false
 
 func _on_crow_entered(body : Node2D) -> void:

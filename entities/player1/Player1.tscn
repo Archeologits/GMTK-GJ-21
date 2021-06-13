@@ -9,7 +9,7 @@
 [ext_resource path="res://entities/player1/blue_up.PNG" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 24, 48 )
+extents = Vector2( 24, 30 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 50, 50 )
@@ -132,6 +132,7 @@ script = ExtResource( 2 )
 script = ExtResource( 1 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 12 )
 z_index = 1
 shape = SubResource( 1 )
 
@@ -150,5 +151,4 @@ occluder = SubResource( 3 )
 [node name="Body" type="AnimatedSprite" parent="."]
 frames = SubResource( 20 )
 animation = "up"
-frame = 1
 playing = true

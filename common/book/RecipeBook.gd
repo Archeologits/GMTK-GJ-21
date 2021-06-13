@@ -13,6 +13,7 @@ func interact(body : Player) -> void:
   if !pushed_down:
     # Red pushes book down the hole (move book to Blue Room Pantry)
     position = destination.position
+    pushed_down = true
   elif !item_collected:
     # Blue picks up the book from the pantry
     body.collect_tool("Recipe")
