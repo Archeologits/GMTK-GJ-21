@@ -6,7 +6,6 @@ func interact(body : Player) -> void:
     Util.swap_message(collected)
     body.collect_tool("Stuffed crow")
     item_collected = true
-    $Sprite.play("break")
     # If audio added - simply uncomment the following
 #    $Audio.play()
   else:
