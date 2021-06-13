@@ -29,6 +29,7 @@ func _process(_delta : float) -> void:
   if direction.length() > 1e-6:
     $Body.show()
     $StaticImage.hide()
+    Sounds.play("footstep")
   else:
     $Body.hide()
     $StaticImage.show()
