@@ -21,6 +21,8 @@ func interact(body : Player) -> void:
   elif red_key_sent:
     Util.swap_message("Found a red key!!")
     body.collect_tool("Red key")
+    red_key_received = true
+    $RedKey.visible = false
   else:
     Util.shake()
 
