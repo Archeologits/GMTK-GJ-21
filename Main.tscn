@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://gui/PauseMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/player2/Player2.tscn" type="PackedScene" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://common/tools/rotten_meat/RottenMeat.tscn" type="PackedScene" id=22]
 [ext_resource path="res://common/furniture/Crow/Crow.tscn" type="PackedScene" id=23]
 [ext_resource path="res://common/furniture/Chest/Chest.tscn" type="PackedScene" id=24]
+[ext_resource path="res://common/doors/PantryDoor/PantryDoor.tscn" type="PackedScene" id=25]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -82,6 +83,10 @@ tile_data = PoolIntArray( -196612, 1, 0, -196611, 1, 0, -196610, 1, 0, -196609, 
 
 [node name="BlueRoom" type="Node" parent="Furniture"]
 
+[node name="Crow" parent="Furniture/BlueRoom" instance=ExtResource( 23 )]
+position = Vector2( 367.604, 866.543 )
+z_index = -1
+
 [node name="Furniture" parent="Furniture/BlueRoom" instance=ExtResource( 9 )]
 position = Vector2( 246.723, 1059.35 )
 
@@ -89,11 +94,11 @@ position = Vector2( 246.723, 1059.35 )
 position = Vector2( 397.111, 1060.93 )
 scale = Vector2( 5, 5 )
 
-[node name="Crow" parent="Furniture/BlueRoom" instance=ExtResource( 23 )]
-position = Vector2( 367.604, 866.543 )
-
 [node name="Chest" parent="Furniture/BlueRoom" instance=ExtResource( 24 )]
 position = Vector2( 112.816, 1233.95 )
+
+[node name="PantryDoor" parent="Furniture/BlueRoom" instance=ExtResource( 25 )]
+position = Vector2( 792.845, 1007.26 )
 
 [node name="RedRoom" type="Node" parent="Furniture"]
 
@@ -164,7 +169,7 @@ __meta__ = {
 }
 
 [node name="RecipeBookDestination" type="Position2D" parent="Furniture/RedRoom"]
-position = Vector2( 266.985, 987.42 )
+position = Vector2( 838.318, 907.725 )
 
 [node name="GreenRoom" type="Node" parent="Furniture"]
 
