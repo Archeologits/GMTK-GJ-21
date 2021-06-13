@@ -1,9 +1,15 @@
 extends Furniture
 class_name Crow
 
+var quill_collected : bool  = false
+
 func interact(body : Player) -> void:
+  if !quill_collected:
+    Util.swap_message("Got a quill!")
+    body.collect_tool("Quill")
+    quill_collected = true
   if body.tools.has("Butter knife") and !item_collected:
-    Util.swap_message(collected)
+    Util.swap_message("Got a stuffed crow!")
     body.collect_tool("Stuffed crow")
     item_collected = true
     # If audio added - simply uncomment the following

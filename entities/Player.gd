@@ -81,7 +81,6 @@ func _apply_movement(delta : float) -> void:
   velocity = velocity.move_toward(direction*speed, acceleration*delta)
   velocity = move_and_slide(velocity)
 
-
 func _on_Interaction_body_entered(body : Node2D) -> void:
-  if body.is_in_group("Players"):
+  if body.is_in_group("Players") and body != self:
     emit_signal("merge", self, body)
